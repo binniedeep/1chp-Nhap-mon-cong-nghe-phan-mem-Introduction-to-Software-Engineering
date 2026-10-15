@@ -1,111 +1,72 @@
-🔍**LythuyetThaotac: Lập kế hoạch dự án phần mềm — Project Charter, WBS, Gantt Chart và quản lý rủi ro** — Huong dan xay dung Ke hoach du an(7).pdf
+### 🔍LythuyetThaotac: Lập kế hoạch dự án phần mềm — Huong dan xay dung Ke hoach du an(7).pdf
 
 **Giới thiệu bài toán mẫu để học cách thao tác**
 
-Bạn nhận nhiệm vụ xây dựng **phần mềm quản lý và thu phí chung cư Blue Moon**, gồm ba nhóm chức năng:
+Bạn cần xây dựng phần mềm quản lý và thu phí chung cư **Blue Moon**, gồm ba module:
 
 - **Quản lý thu phí:** tạo khoản thu, ghi nhận thanh toán, thống kê.
-- **Quản lý người dùng:** quản lý tài khoản và quyền sử dụng.
+- **Quản lý người dùng:** quản lý tài khoản và phân quyền.
 - **Quản lý hộ gia đình:** quản lý hộ, nhân khẩu và biến động nhân khẩu.
 
-Muốn triển khai được, bạn cần trả lời lần lượt: dự án cần đạt điều gì → cần tạo ra những gì → phải làm những việc nào → ai làm, làm lúc nào → điều gì có thể khiến kế hoạch thất bại.
+Bạn sẽ lần lượt tạo các sản phẩm để trả lời: **Dự án làm gì → cần tạo những gì → phải làm những việc nào → ai làm, khi nào → chuẩn bị gì trước rủi ro.**
 
-Dưới đây là **năm sản phẩm cần tạo**. Mỗi bước đều có **ý nghĩa**, **cách thao tác** và **ví dụ điền dữ liệu**.
-
-Ngân sách **100 triệu đồng** được lấy từ tài liệu. Nhóm bốn người, lịch 12 tuần và các ước lượng công việc bên dưới là **giả định bổ sung để thực hành**, chưa phải cam kết thực tế.
+Ngân sách **100 triệu đồng** lấy từ tài liệu. Nhóm bốn người, lịch 12 tuần và các ước lượng dưới đây là giả định bổ sung để thực hành. Nguồn: Huong dan xay dung Ke hoach du an(7).pdf
 
 <details>
-<summary>-sản phẩm 'Tuyên ngôn dự án — Project Charter'</summary>
+<summary><strong>-sản phẩm 'Tuyên ngôn dự án — Project Charter' — Xác lập mục tiêu, phạm vi, nguồn lực và trách nhiệm của dự án.</strong></summary>
 
-**Sản phẩm này dùng để làm gì?**
+#### -bước 'Xác định thông tin chung' — Ghi rõ dự án nào đang được thực hiện và ai bảo trợ.
 
-Đây là tài liệu xác lập dự án: lý do thực hiện, mục tiêu, phạm vi, nguồn lực, người chịu trách nhiệm và người phê duyệt.
-
-Bạn cần tạo được một tài liệu mà người đọc có thể hiểu: **“Chúng ta đồng ý làm dự án gì, trong giới hạn nào và ai chịu trách nhiệm?”**
-
-**Bước 1: Tạo tài liệu và xác định thông tin chung**
-
-**Ý nghĩa:** Giúp mọi người nhận diện cùng một dự án, tránh mỗi người hiểu một tên hoặc một đối tượng phục vụ khác nhau.
-
-**Cách thao tác:**
-
-Mở Word hoặc công cụ soạn thảo bạn đang dùng. Tạo tài liệu có tên gợi ý `01_Tuyen_ngon_du_an_BlueMoon`, sau đó điền:
+Tạo tài liệu `01_Tuyen_ngon_du_an_BlueMoon`, sau đó điền:
 
 | Nội dung | Ví dụ điền |
 |---|---|
 | Tên dự án | Xây dựng phần mềm quản lý và thu phí chung cư Blue Moon |
-| Nhà tài trợ dự án | Người đại diện có thẩm quyền phê duyệt nguồn lực dự án |
+| Nhà tài trợ | Người có thẩm quyền phê duyệt nguồn lực dự án |
 | Cơ quan tài trợ | Công ty ABC, theo ví dụ trong tài liệu |
-| Mức độ ảnh hưởng | Thay đổi cách quản lý thông tin hộ dân và hoạt động thu phí của ban quản trị |
-| Phiên bản tài liệu | 1.0 |
-| Ngày lập | Ngày thực tế bạn lập tài liệu |
+| Mức độ ảnh hưởng | Thay đổi cách quản lý thông tin hộ dân và thu phí |
+| Phiên bản | 1.0 |
+| Ngày lập | Ngày thực tế lập tài liệu |
 
-Tên nhà tài trợ phải được xác nhận theo dự án thực tế; không tự coi người dùng phần mềm là người có quyền duyệt ngân sách.
+Nhà tài trợ, khách hàng và người sử dụng có thể là những người khác nhau. Cần xác nhận đúng vai trò trước khi điền tên.
 
-**Bước 2: Xác định đội thực hiện và các bên liên quan**
+#### -bước 'Xác định người tham gia' — Phân biệt người trực tiếp làm sản phẩm và người cung cấp yêu cầu, sử dụng hoặc phê duyệt.
 
-**Ý nghĩa:** Đội thực hiện trực tiếp làm sản phẩm. Các bên liên quan cung cấp yêu cầu, sử dụng, hỗ trợ hoặc phê duyệt sản phẩm.
+Lập bảng đội thực hiện:
 
-**Cách thao tác:**
-
-Tạo hai bảng riêng.
-
-Bảng đội thực hiện mẫu:
-
-| Thành viên | Vai trò chính | Trách nhiệm |
+| Thành viên mẫu | Vai trò | Trách nhiệm chính |
 |---|---|---|
 | A | Quản lý dự án, phân tích nghiệp vụ | Làm rõ yêu cầu, lập kế hoạch, theo dõi tiến độ |
-| B | Lập trình phần xử lý và dữ liệu | Thiết kế dữ liệu, xử lý nghiệp vụ |
+| B | Lập trình xử lý và dữ liệu | Thiết kế dữ liệu, xây dựng xử lý nghiệp vụ |
 | C | Lập trình giao diện | Thiết kế và xây dựng màn hình |
-| D | Kiểm thử | Chuẩn bị tình huống kiểm tra, kiểm tra kết quả và báo lỗi |
+| D | Kiểm thử | Chuẩn bị tình huống kiểm tra, kiểm thử và báo lỗi |
 
-Bảng các bên liên quan:
+Lập tiếp bảng các bên liên quan:
 
-| Bên liên quan | Cần tham gia việc gì? |
+| Bên liên quan | Trách nhiệm |
 |---|---|
 | Đại diện ban quản trị | Xác nhận phạm vi và tiêu chí nghiệm thu |
-| Kế toán chung cư | Giải thích nghiệp vụ thu phí, dùng thử |
-| Nhà tài trợ | Duyệt nguồn lực và các quyết định thuộc thẩm quyền |
+| Kế toán chung cư | Cung cấp quy tắc thu phí, dùng thử và phản hồi |
+| Nhà tài trợ | Duyệt nguồn lực và quyết định thuộc thẩm quyền |
 | Đơn vị triển khai | Cung cấp thông tin môi trường cài đặt, hỗ trợ bàn giao |
 
-Bổ sung họ tên, nơi công tác và thông tin liên hệ vào bản thực tế theo mẫu của tài liệu.
+Trong bản thực tế, bổ sung họ tên, nơi công tác và thông tin liên hệ theo mẫu tài liệu.
 
-**Bước 3: Viết bối cảnh, mục đích và mục tiêu**
+#### -bước 'Viết bối cảnh, mục đích và mục tiêu' — Làm rõ vấn đề hiện tại, điều muốn cải thiện và kết quả cần đạt.
 
-**Ý nghĩa:** Ba nội dung này trả lời ba câu hỏi khác nhau:
+Điền ba nội dung riêng:
 
-| Nội dung | Câu hỏi cần trả lời |
+| Nội dung | Ví dụ |
 |---|---|
-| Bối cảnh | Hiện tại đang có vấn đề gì? |
-| Mục đích | Làm dự án để cải thiện điều gì? |
-| Mục tiêu | Dựa vào đâu để biết dự án đạt kết quả? |
+| **Bối cảnh:** Hiện đang có vấn đề gì? | Ban quản trị theo dõi hộ dân và khoản thu bằng sổ sách, Excel; khó tra cứu lịch sử thanh toán và tổng hợp hộ chưa đóng phí. |
+| **Mục đích:** Làm dự án để cải thiện điều gì? | Tập trung thông tin hộ dân, khoản thu và thanh toán để hỗ trợ quản lý, tra cứu và thống kê. |
+| **Mục tiêu:** Dựa vào đâu để biết đã đạt kết quả? | Quản lý được các loại phí và thông tin hộ dân thuộc danh sách đã thống nhất; ghi nhận, tra cứu được thanh toán; các tình huống nghiệm thu bắt buộc đều đạt. |
 
-**Cách thao tác và ví dụ điền:**
+Nếu viết “quản lý 100% loại phí”, phải chỉ rõ **100% của danh mục nào**, chẳng hạn “danh mục yêu cầu phiên bản 1.0”. Nhờ vậy, mục tiêu mới kiểm tra được.
 
-**Bối cảnh:**
+#### -bước 'Chốt phạm vi' — Xác định những công việc và chức năng được nhận thực hiện.
 
-> Ban quản trị đang theo dõi hộ dân và các khoản thu bằng sổ sách, Excel. Thông tin nằm ở nhiều nơi, gây khó khăn khi tra cứu lịch sử thanh toán và tổng hợp các hộ chưa đóng phí.
-
-**Mục đích:**
-
-> Xây dựng phần mềm tập trung thông tin hộ dân, khoản thu và thanh toán để hỗ trợ ban quản trị quản lý và thống kê.
-
-**Mục tiêu mẫu:**
-
-- Quản lý được toàn bộ loại phí thuộc danh mục hai bên đã thống nhất.
-- Quản lý được thông tin hộ và nhân khẩu theo các trường dữ liệu đã chốt.
-- Ghi nhận được khoản thanh toán và tra cứu được lịch sử đóng phí.
-- Các tình huống nghiệm thu bắt buộc đều đạt; không còn lỗi nghiêm trọng ngăn cản nghiệp vụ chính.
-
-Khi viết “100%”, phải xác định **100% của danh sách nào**. Ví dụ: “100% loại phí trong danh mục yêu cầu phiên bản 1.0”, để có căn cứ kiểm tra.
-
-**Bước 4: Chốt phạm vi làm và phạm vi không làm**
-
-**Ý nghĩa:** Phạm vi xác định ranh giới dự án. Đây là căn cứ để nhận biết yêu cầu mới có làm tăng công việc hay không.
-
-**Cách thao tác:**
-
-Tách thành phạm vi công việc và phạm vi chức năng.
+Tạo bảng:
 
 | Nhóm | Ví dụ điền |
 |---|---|
@@ -113,40 +74,32 @@ Tách thành phạm vi công việc và phạm vi chức năng.
 | Chức năng thực hiện | Quản lý thu phí, người dùng, hộ gia đình |
 | Công việc không bao gồm | Nhập toàn bộ dữ liệu thật ban đầu về hộ dân, nhân khẩu và các loại phí |
 
-Nội dung không bao gồm ở trên được nêu trong tài liệu. Nếu bạn muốn thêm giới hạn như “chưa tích hợp ngân hàng”, phải ghi đó là **đề xuất phạm vi cần thống nhất**.
+Việc không nhận nhập toàn bộ dữ liệu vận hành **không loại bỏ việc tạo dữ liệu mẫu để kiểm thử**.
 
-Ví dụ quan trọng: nhóm vẫn phải tạo **dữ liệu mẫu để kiểm thử**, dù không nhận trách nhiệm nhập toàn bộ dữ liệu vận hành cho khách hàng.
+Nếu muốn bổ sung giới hạn như “chưa tích hợp ngân hàng”, ghi đó là nội dung cần thống nhất với khách hàng trước khi chốt.
 
-**Bước 5: Liệt kê sản phẩm bàn giao và cách kiểm tra**
+#### -bước 'Liệt kê sản phẩm bàn giao' — Xác định người nhận sẽ nhận được gì và kiểm tra bằng cách nào.
 
-**Ý nghĩa:** “Lập trình xong” chưa đủ để bàn giao. Cần biết khách hàng nhận những gì và kiểm tra bằng cách nào.
+Tạo bảng từ danh sách bàn giao trong tài liệu:
 
-**Cách thao tác:**
-
-Tạo bảng:
-
-| Sản phẩm bàn giao | Người nhận | Cách kiểm tra mẫu |
+| Sản phẩm | Người nhận | Cách kiểm tra mẫu |
 |---|---|---|
-| Bộ cài phần mềm | Khách hàng | Cài được trên các phiên bản Windows đã thống nhất |
+| Bộ cài phần mềm | Khách hàng | Cài và chạy được trên môi trường đã thống nhất |
 | Hướng dẫn cài đặt | Người triển khai | Làm theo tài liệu để cài thành công |
-| Hướng dẫn sử dụng | Người dùng | Thực hiện được các nghiệp vụ chính theo hướng dẫn |
+| Hướng dẫn sử dụng | Người dùng | Thực hiện được nghiệp vụ chính theo hướng dẫn |
 | Hồ sơ bản quyền/quyền sử dụng | Khách hàng | Có hồ sơ theo thỏa thuận |
-| Mã nguồn | Chủ đầu tư | Nhận đủ mã nguồn và hướng dẫn xây dựng |
-| Tài liệu yêu cầu, thiết kế, kiểm thử | Chủ đầu tư | Có đủ nội dung và phiên bản đã thống nhất |
-| Tài liệu cấu trúc mã nguồn, API | Chủ đầu tư | Mô tả phù hợp với phần mềm bàn giao |
+| Mã nguồn | Chủ đầu tư | Có đủ mã nguồn và hướng dẫn xây dựng |
+| Tài liệu yêu cầu, thiết kế, kiểm thử | Chủ đầu tư | Đủ nội dung và phiên bản đã thống nhất |
+| Tài liệu cấu trúc mã nguồn, API | Chủ đầu tư | Phù hợp với phần mềm bàn giao |
 | Tài liệu dự án | Chủ đầu tư | Có kế hoạch và hồ sơ theo dõi cần thiết |
 
-Các cách kiểm tra trong bảng là gợi ý bổ sung để bạn biến danh sách bàn giao thành nội dung có thể nghiệm thu.
+Cột “cách kiểm tra” giúp biến lời hứa bàn giao thành nội dung có thể nghiệm thu.
 
-**Bước 6: Điền ngân sách và các mốc lịch trình**
+#### -bước 'Điền ngân sách và lịch trình' — Xác định giới hạn kinh phí và thời điểm cần có từng kết quả.
 
-**Ý nghĩa:** Ngân sách giới hạn nguồn lực. Mốc lịch trình xác định thời điểm cần có kết quả cụ thể.
+Ghi ngân sách **100.000.000 đồng**, bao gồm xây dựng phần mềm, quản lý dự án và dự phòng như tài liệu.
 
-**Cách thao tác:**
-
-Ghi tổng ngân sách **100.000.000 đồng**, bao gồm xây dựng phần mềm, quản lý dự án và dự phòng như tài liệu.
-
-Để tập phân bổ, có thể dùng ví dụ:
+Ví dụ phân bổ để thực hành:
 
 | Khoản mục | Kinh phí giả định |
 |---|---:|
@@ -155,109 +108,91 @@ Ghi tổng ngân sách **100.000.000 đồng**, bao gồm xây dựng phần m�
 | Dự phòng | 15.000.000 |
 | **Tổng** | **100.000.000** |
 
-Sau đó lập các mốc:
+Lập các mốc kết quả:
 
 | Mốc | Thời điểm mẫu | Kết quả cần có |
 |---|---|---|
-| Chốt yêu cầu | Cuối tuần 2 | Danh sách yêu cầu được xác nhận |
+| Chốt yêu cầu | Cuối tuần 2 | Yêu cầu được xác nhận |
 | Hoàn thành thiết kế | Cuối tuần 4 | Thiết kế giao diện, dữ liệu và xử lý |
 | Hoàn thành chức năng chính | Cuối tuần 8 | Phiên bản có thể kiểm thử |
-| Bàn giao dùng thử | Cuối tuần 10 | Người dùng thực hiện các nghiệp vụ mẫu |
+| Bàn giao dùng thử | Cuối tuần 10 | Người dùng thử các nghiệp vụ mẫu |
 | Hoàn tất điều chỉnh | Cuối tuần 11 | Xử lý các vấn đề đã thống nhất |
 | Bàn giao chính thức | Cuối tuần 12 | Phần mềm và hồ sơ bàn giao |
 
-Các ngày năm 2023 trong tài liệu là lịch của ví dụ gốc. Khi lập dự án của bạn, thay bằng ngày phù hợp với kế hoạch thực tế.
+Các ngày năm 2023 trong tài liệu thuộc ví dụ gốc. Khi làm dự án của mình, thay bằng ngày thực tế.
 
-**Bước 7: Phân biệt rủi ro, giả định, ràng buộc và phụ thuộc**
+#### -bước 'Ghi rủi ro, giả định, ràng buộc và phụ thuộc' — Làm rõ các điều kiện ảnh hưởng đến tính khả thi của kế hoạch.
 
-**Ý nghĩa:** Bốn nhóm này ảnh hưởng khác nhau đến cách lập kế hoạch.
-
-**Cách thao tác:**
-
-Điền từng nhóm theo câu hỏi sau:
+Điền theo bảng:
 
 | Nhóm | Cách hiểu | Ví dụ |
 |---|---|---|
-| Rủi ro | Điều chưa chắc xảy ra nhưng có thể gây ảnh hưởng | Một thành viên rời nhóm giữa dự án |
-| Giả định | Điều tạm coi là đúng để lập kế hoạch | Kế toán sẽ tham gia dùng thử và phản hồi |
+| Rủi ro | Điều có thể xảy ra và gây ảnh hưởng | Thành viên rời nhóm giữa dự án |
+| Giả định | Điều tạm coi là đúng để lập kế hoạch | Kế toán tham gia dùng thử và phản hồi |
 | Ràng buộc | Giới hạn phải tuân thủ | Ngân sách không vượt 100 triệu đồng |
-| Phụ thuộc bên ngoài | Việc cần một bên ngoài nhóm cung cấp hoặc hoàn thành | Ban quản trị cung cấp quy tắc tính phí trước khi chốt yêu cầu |
+| Phụ thuộc bên ngoài | Việc cần một bên ngoài nhóm cung cấp hoặc hoàn thành | Ban quản trị cung cấp quy tắc tính phí |
 
-Với mỗi phụ thuộc, bổ sung **người cung cấp** và **hạn cần nhận**. Ví dụ: “Kế toán cung cấp danh mục phí trước cuối tuần 1”.
+Với phụ thuộc, thêm **người cung cấp và hạn cần nhận**. Ví dụ: “Kế toán cung cấp danh mục phí trước cuối tuần 1”.
 
-**Bước 8: Viết cách trao đổi thông tin**
+Các ràng buộc trong tài liệu còn có thời gian dự án không quá bốn tháng và chỉ bổ sung nhân lực khi không vượt ngân sách.
 
-**Ý nghĩa:** Nhóm cần biết thông tin nào được trao đổi, trao đổi với ai và vào lúc nào.
+#### -bước 'Quy định cách trao đổi thông tin' — Xác định ai cần nhận thông tin nào và vào lúc nào.
 
-**Cách thao tác:**
+Lập bảng:
 
-| Hoạt động | Thành phần | Tần suất | Kết quả cần lưu |
+| Hoạt động | Thành phần | Tần suất | Nội dung cần lưu |
 |---|---|---|---|
 | Họp nhanh | Nhóm thực hiện | Hằng ngày | Việc đang làm, vướng mắc |
 | Báo cáo tiến độ | Quản lý, nhà tài trợ, nhóm | Hằng tuần | Tiến độ, rủi ro, quyết định cần xử lý |
-| Đánh giá mốc | Khách hàng, nhà tài trợ, nhóm | Theo mốc | Kết quả được chấp nhận và việc cần sửa |
+| Đánh giá mốc | Khách hàng, nhà tài trợ, nhóm | Theo mốc | Kết quả được chấp nhận, việc cần sửa |
 
-**Bước 9: Rà soát và phê duyệt**
+Các quyết định làm thay đổi phạm vi, chi phí hoặc lịch phải được ghi nhận để các bên cùng theo dõi.
 
-**Ý nghĩa:** Các bên xác nhận cùng hiểu và chấp nhận nội dung dự án.
+#### -bước 'Rà soát và phê duyệt' — Kiểm tra nội dung thống nhất trước khi dùng làm căn cứ triển khai.
 
-**Cách thao tác:**
+Đọc lại để kiểm tra:
 
-Đọc lại để kiểm tra mục tiêu có nằm trong phạm vi, sản phẩm bàn giao có đủ và ngân sách có cộng đúng không. Sau đó tạo bảng họ tên, chữ ký và ngày phê duyệt cho các vai trò theo mẫu tài liệu.
+- Mục tiêu có nằm trong phạm vi không?
+- Sản phẩm bàn giao có đủ không?
+- Tổng ngân sách có đúng không?
+- Lịch có phù hợp nguồn lực không?
+- Vai trò và người có quyền xác nhận đã rõ chưa?
 
-Nếu là bài tập mô phỏng, ghi rõ **“dự thảo phục vụ học tập”**, không điền chữ ký giả.
-
-**Dấu hiệu hoàn thành:** Người đọc có thể xác định được dự án làm gì, bàn giao gì, giới hạn nguồn lực và ai có quyền xác nhận.
+Tạo bảng **họ tên — chữ ký — ngày phê duyệt** cho các vai trò theo mẫu. Nếu là bài tập mô phỏng, ghi rõ “dự thảo phục vụ học tập”.
 
 </details>
 
 <details>
-<summary>-sản phẩm 'Cấu trúc phân cấp công việc theo sản phẩm bàn giao — WBS'</summary>
+<summary><strong>-sản phẩm 'WBS theo sản phẩm bàn giao' — Chia phạm vi dự án thành những thành phần có kết quả kiểm tra được.</strong></summary>
 
-**Sản phẩm này dùng để làm gì?**
+#### -bước 'Lấy đầu vào từ tuyên ngôn' — Dùng phạm vi và danh sách bàn giao đã thống nhất để phân rã công việc.
 
-WBS chia phạm vi lớn thành các phần nhỏ để quản lý. Theo cách tổ chức này, bạn bắt đầu bằng câu hỏi: **“Muốn có sản phẩm hoàn chỉnh thì cần những thành phần nào?”**
+Mở tuyên ngôn, lấy ba module cùng các hồ sơ, tài liệu và công việc bàn giao.
 
-**Bước 1: Lấy phạm vi và danh sách bàn giao làm đầu vào**
-
-**Ý nghĩa:** WBS phải xuất phát từ những gì dự án đã thống nhất.
-
-**Cách thao tác:**
-
-Mở tuyên ngôn dự án, lấy ba module và danh sách tài liệu phải bàn giao.
-
-Bạn có thể lập bảng trong Word hoặc Excel với các cột:
+Tạo bảng:
 
 | Mã WBS | Cấp | Tên thành phần | Kết quả cần có |
 |---|---:|---|---|
 
-Chưa cần điền ngày hoặc người thực hiện ở bước này.
+Ở bước này tập trung vào **cần có những gì**, chưa cần điền lịch hoặc người làm.
 
-**Bước 2: Xác định nút gốc**
+#### -bước 'Xác định nút gốc' — Chốt phạm vi mà toàn bộ cấu trúc phải bao quát.
 
-**Ý nghĩa:** Nút gốc quyết định toàn bộ phạm vi mà cấu trúc bên dưới phải bao quát.
-
-**Cách thao tác:**
-
-Nếu chỉ phân rã phần mềm như hình trong tài liệu, đặt:
+Nếu chỉ phân rã phần mềm như hình trong tài liệu, dùng:
 
 > 0 — Phần mềm quản lý và thu phí Blue Moon.
 
-Nếu muốn bao quát **toàn bộ dự án**, đặt:
+Nếu phân rã toàn dự án, dùng:
 
 > 0 — Dự án xây dựng phần mềm quản lý và thu phí Blue Moon.
 
-Hai phạm vi này khác nhau: WBS của toàn dự án còn cần bao quát quản lý, tài liệu, triển khai và bàn giao.
+Trong ví dụ này chọn **toàn dự án**, nên cấu trúc còn phải bao quát quản lý, tài liệu, triển khai và bàn giao.
 
-Trong bài thực hành này, dùng phạm vi **toàn dự án**.
+#### -bước 'Chia thành các nhóm kết quả lớn' — Tạo những nhánh chính cần hoàn thành để dự án hoàn thành.
 
-**Bước 3: Chia thành các nhóm kết quả lớn**
+Điền:
 
-**Ý nghĩa:** Mỗi nhánh là một phần kết quả cần có để hoàn thành dự án.
-
-**Cách thao tác và ví dụ điền:**
-
-| Mã WBS | Thành phần |
+| Mã | Thành phần |
 |---|---|
 | 1 | Bộ hồ sơ quản lý dự án |
 | 2 | Module quản lý thu phí |
@@ -266,115 +201,78 @@ Trong bài thực hành này, dùng phạm vi **toàn dự án**.
 | 5 | Bộ tài liệu kỹ thuật và hướng dẫn |
 | 6 | Gói triển khai và bàn giao |
 
-Ba nhánh module được lấy theo tài liệu; các nhánh còn lại giúp bao quát phạm vi toàn dự án đã chọn.
+Ba module lấy theo tài liệu; các nhánh còn lại giúp bao quát phạm vi toàn dự án đã chọn.
 
-**Bước 4: Phân rã module thành các gói công việc**
+#### -bước 'Phân rã module thành gói công việc' — Chia mỗi module thành các phần có thể mô tả và kiểm tra riêng.
 
-**Ý nghĩa:** Gói công việc cần đủ cụ thể để biết phải tạo ra kết quả gì và có thể kiểm tra khi hoàn thành.
+Ví dụ:
 
-**Cách thao tác:**
-
-Dưới mỗi module, thêm các chức năng. Ví dụ:
-
-| Mã WBS | Gói công việc | Kết quả cần có |
+| Mã | Gói công việc | Kết quả cần có |
 |---|---|---|
-| 2.1 | Chức năng tạo khoản thu | Tạo và lưu khoản thu theo quy tắc đã thống nhất |
-| 2.2 | Chức năng ghi nhận thanh toán | Lưu thanh toán đúng hộ và khoản thu |
+| 2.1 | Chức năng tạo khoản thu | Tạo và lưu khoản thu theo quy tắc đã chốt |
+| 2.2 | Chức năng ghi nhận thanh toán | Lưu đúng hộ, khoản thu và thông tin thanh toán |
 | 2.3 | Chức năng thống kê | Hiển thị số liệu theo bộ lọc đã chốt |
-| 3.1 | Chức năng quản lý tài khoản | Quản lý tài khoản theo phạm vi yêu cầu |
+| 3.1 | Chức năng quản lý tài khoản | Quản lý tài khoản theo yêu cầu |
 | 3.2 | Chức năng phân quyền | Giới hạn thao tác theo vai trò |
-| 4.1 | Chức năng quản lý hộ gia đình | Lưu và tra cứu thông tin hộ |
-| 4.2 | Chức năng quản lý nhân khẩu | Lưu thông tin nhân khẩu gắn với hộ |
-| 4.3 | Chức năng ghi nhận biến động | Theo dõi thay đổi nhân khẩu theo yêu cầu |
+| 4.1 | Chức năng quản lý hộ | Lưu và tra cứu thông tin hộ |
+| 4.2 | Chức năng quản lý nhân khẩu | Lưu nhân khẩu gắn với hộ |
+| 4.3 | Chức năng ghi nhận biến động | Theo dõi thay đổi nhân khẩu |
 
-Danh sách chức năng chi tiết là ví dụ thực hành; cần đối chiếu yêu cầu của dự án bạn trước khi chốt.
+Danh sách chi tiết này là ví dụ thực hành; khi làm thật cần đối chiếu yêu cầu đã được xác nhận.
 
-**Bước 5: Viết mô tả cho một gói công việc**
+#### -bước 'Mô tả rõ từng gói' — Ghi đầu vào, đầu ra và tiêu chí hoàn thành để người nhận hiểu đúng việc.
 
-**Ý nghĩa:** Tên “tạo khoản thu” còn ngắn; người được giao cần biết dữ liệu, giới hạn và tiêu chí hoàn thành.
+Chọn gói `2.1`, điền:
 
-**Cách thao tác:**
-
-Chọn gói `2.1`, lập mô tả:
-
-| Nội dung | Ví dụ điền |
+| Nội dung | Ví dụ |
 |---|---|
-| Mã | 2.1 |
-| Tên | Chức năng tạo khoản thu |
-| Đầu vào | Quy tắc nghiệp vụ đã chốt, danh mục loại phí |
+| Tên gói | Chức năng tạo khoản thu |
+| Đầu vào | Quy tắc nghiệp vụ và danh mục loại phí đã chốt |
 | Kết quả | Người có quyền tạo được khoản thu hợp lệ |
-| Dữ liệu mẫu | Mã khoản thu, tên khoản thu, loại phí, kỳ thu, số tiền hoặc quy tắc tính |
+| Dữ liệu mẫu | Mã, tên khoản thu, loại phí, kỳ thu, số tiền hoặc quy tắc tính |
 | Phạm vi xử lý | Kiểm tra dữ liệu, lưu và hiển thị khoản thu |
-| Điều kiện hoàn thành | Lưu đúng dữ liệu hợp lệ; báo lỗi khi thiếu dữ liệu bắt buộc; chỉ người có quyền được thao tác |
+| Điều kiện hoàn thành | Lưu đúng dữ liệu hợp lệ; báo lỗi khi thiếu dữ liệu bắt buộc; kiểm soát quyền thao tác |
 
-Các trường dữ liệu phải do yêu cầu nghiệp vụ quyết định. Ví dụ phí tính theo diện tích sẽ cần dữ liệu khác khoản đóng góp tự nguyện.
+Trường dữ liệu phải xuất phát từ nghiệp vụ. Chẳng hạn phí theo diện tích cần dữ liệu và quy tắc khác khoản đóng góp tự nguyện.
 
-**Bước 6: Tách tiếp nếu gói còn quá lớn**
+#### -bước 'Tách gói lớn thành hoạt động' — Chia nhỏ khi một gói cần nhiều người hoặc nhiều loại công việc.
 
-**Ý nghĩa:** Một chức năng có thể cần nhiều người và nhiều loại công việc để hoàn thành.
+Với gói `2.1`, liệt kê:
 
-**Cách thao tác:**
-
-Với gói `2.1`, liệt kê các hoạt động:
-
-- Làm rõ yêu cầu tạo khoản thu.
+- Làm rõ yêu cầu.
 - Thiết kế dữ liệu và giao diện.
 - Lập trình xử lý và giao diện.
 - Tích hợp.
-- Kiểm thử, sửa lỗi.
+- Kiểm thử và sửa lỗi.
 - Xác nhận kết quả.
 
-Giữ liên kết các hoạt động này với mã `2.1`. Chúng sẽ được chuyển sang bảng nhiệm vụ ở sản phẩm tiếp theo.
+Giữ mã liên kết với gói `2.1` để sau này biết từng nhiệm vụ phục vụ chức năng nào.
 
-**Bước 7: Kiểm tra quy tắc 100%**
+#### -bước 'Kiểm tra quy tắc 100%' — Bảo đảm phần con bao quát đúng phạm vi của phần cha.
 
-**Ý nghĩa:** Toàn bộ phần con phải bao quát đúng phạm vi của phần cha.
-
-**Cách thao tác:**
-
-Với từng nhánh, tự hỏi:
+Với mỗi nhánh, hỏi:
 
 > Nếu hoàn thành tất cả phần con thì phần cha đã thực sự hoàn thành chưa?
 
-Ví dụ, module thu phí có cả tạo khoản thu, ghi nhận thanh toán và thống kê thì không thể chỉ liệt kê “tạo khoản thu”.
+Ví dụ, module thu phí không thể chỉ có “tạo khoản thu” nếu phạm vi còn bao gồm thanh toán và thống kê.
 
-Đồng thời kiểm tra:
-
-- Không bỏ sót kiểm thử, tài liệu và bàn giao.
-- Không đưa việc ngoài phạm vi vào kế hoạch.
-- Không tính cùng một công việc ở hai nhánh. Ví dụ: tài liệu kiểm thử có thể thuộc bộ hồ sơ kỹ thuật; việc thực hiện kiểm thử thuộc các hoạt động xây dựng chức năng.
-
-**Dấu hiệu hoàn thành:** Mỗi phần việc cần làm đều tìm được vị trí trong WBS và mỗi gói có kết quả kiểm tra được.
+Kiểm tra thêm việc bỏ sót hoặc tính trùng. Chẳng hạn **thực hiện kiểm thử** và **bàn giao tài liệu kiểm thử** có liên hệ nhưng là hai kết quả cần mô tả rõ.
 
 </details>
 
 <details>
-<summary>-sản phẩm 'Cấu trúc phân cấp công việc theo quy trình — Waterfall hoặc Scrum'</summary>
+<summary><strong>-sản phẩm 'WBS theo quy trình — Waterfall hoặc Scrum' — Tổ chức công việc theo cách nhóm phát triển và hoàn thiện phần mềm.</strong></summary>
 
-**Sản phẩm này dùng để làm gì?**
-
-Đây là cách tổ chức khác của WBS, bắt đầu từ câu hỏi: **“Nhóm đi qua những giai đoạn hoặc hoạt động nào để tạo sản phẩm?”**
-
-Tài liệu minh họa cả Waterfall và Scrum. Bạn học cả hai cách, nhưng khi lập kế hoạch thực tế nên chọn một cấu trúc chính để theo dõi, tránh cộng trùng khối lượng.
-
-**Bước 1: Chọn cách tổ chức phù hợp**
-
-**Ý nghĩa:** Cách tổ chức công việc cần phù hợp với cách nhóm dự định phát triển phần mềm.
-
-**Cách thao tác:**
+#### -bước 'Chọn cách tổ chức' — Xác định kế hoạch chính được trình bày theo giai đoạn hay theo các đợt phát triển.
 
 | Cách tổ chức | Cách dùng trong bài thực hành |
 |---|---|
-| Theo Waterfall | Nhóm công việc thành yêu cầu, thiết kế, lập trình, kiểm thử, triển khai |
-| Theo Scrum | Tổ chức công việc theo các đợt phát triển ngắn, tạo kết quả có thể kiểm tra và nhận phản hồi |
+| Waterfall | Nhóm việc theo yêu cầu, thiết kế, lập trình, kiểm thử, triển khai |
+| Scrum | Tổ chức phát triển theo các Sprint, tạo kết quả có thể kiểm tra và nhận phản hồi |
 
-Scrum không chỉ là đổi tên các giai đoạn. Một cây WBS cũng chưa thể hiện đầy đủ cách vận hành Scrum.
+Tài liệu minh họa cả hai. Bạn có thể học cả hai cách nhưng nên dùng một cấu trúc chính để quản lý, tránh cộng trùng công việc.
 
-**Bước 2: Tạo khung WBS theo Waterfall**
-
-**Ý nghĩa:** Mỗi nhánh lớn tập hợp công việc thuộc một giai đoạn hoặc nhóm hoạt động.
-
-**Cách thao tác:**
+#### -bước 'Lập khung theo Waterfall' — Chia dự án thành các nhóm hoạt động lớn.
 
 Tạo bảng:
 
@@ -389,15 +287,11 @@ Tạo bảng:
 | 3 | Hỗ trợ người dùng |
 | 4 | Triển khai và bàn giao |
 
-Chỉ bổ sung vận hành lâu dài nếu công việc đó thuộc phạm vi đã thống nhất.
+Chỉ đưa vận hành lâu dài vào nếu đó là phạm vi đã thống nhất.
 
-**Bước 3: Phân rã từng giai đoạn theo đầu ra**
+#### -bước 'Phân rã từng giai đoạn' — Chuyển tên giai đoạn thành công việc có đầu ra cụ thể.
 
-**Ý nghĩa:** Tên giai đoạn chưa đủ để giao việc. Cần biết giai đoạn đó tạo ra những gì.
-
-**Cách thao tác:**
-
-Ví dụ phân rã nhánh thiết kế:
+Ví dụ nhánh thiết kế:
 
 | Mã | Công việc | Đầu ra |
 |---|---|---|
@@ -407,36 +301,28 @@ Ví dụ phân rã nhánh thiết kế:
 | 2.2.4 | Rà soát thiết kế | Danh sách vấn đề và thiết kế đã sửa |
 | 2.2.5 | Thiết kế phân quyền | Bảng quyền theo vai trò |
 
-Tiếp tục chia `2.2.3` theo ba module, rồi đến từng chức năng nếu cần.
+Tiếp tục chia thiết kế dữ liệu theo ba module, rồi theo từng chức năng nếu cần.
 
-Ví dụ với “tạo khoản thu”, đầu ra thiết kế dữ liệu cần thể hiện được khoản thu lưu những trường nào và liên hệ với loại phí ra sao.
+Ví dụ, thiết kế dữ liệu cho “tạo khoản thu” phải chỉ rõ khoản thu có trường nào, trường nào bắt buộc và liên hệ với loại phí ra sao.
 
-**Bước 4: Tạo phương án tổ chức theo Scrum**
+#### -bước 'Lập phương án theo Scrum' — Chia mục tiêu phát triển thành các đợt ngắn có kết quả kiểm tra được.
 
-**Ý nghĩa:** Chia việc phát triển thành những đợt ngắn, mỗi đợt có mục tiêu và kết quả sử dụng được theo tiêu chí đã thống nhất.
+Dùng cùng phạm vi Blue Moon, thử chia:
 
-**Cách thao tác:**
-
-Dùng cùng phạm vi Blue Moon, thử lập kế hoạch sơ bộ:
-
-| Đợt phát triển mẫu | Mục tiêu | Kết quả dự kiến |
+| Sprint mẫu | Mục tiêu | Kết quả dự kiến |
 |---|---|---|
-| Sprint 1 | Tạo nền tảng tài khoản và dữ liệu hộ | Người có quyền đăng nhập, quản lý thông tin hộ cơ bản |
+| Sprint 1 | Tạo nền tảng tài khoản và dữ liệu hộ | Đăng nhập, quản lý thông tin hộ cơ bản |
 | Sprint 2 | Quản lý khoản thu | Tạo và xem khoản thu |
 | Sprint 3 | Ghi nhận thanh toán | Lưu thanh toán, tra cứu lịch sử |
-| Sprint 4 | Thống kê và hoàn thiện | Xem thống kê, hoàn thiện kết quả theo phản hồi |
+| Sprint 4 | Thống kê và hoàn thiện | Xem thống kê, điều chỉnh theo phản hồi |
 
-Đây là ví dụ chia đợt, cần điều chỉnh theo năng lực nhóm và phụ thuộc thực tế.
+Trong mỗi Sprint, nhóm chọn công việc, phân rã nhiệm vụ, thực hiện, kiểm tra và nhận phản hồi. Không để toàn bộ kiểm thử đến cuối dự án.
 
-Trong mỗi Sprint, chọn các mục cần làm, phân rã thành nhiệm vụ, thực hiện, kiểm tra kết quả và nhận phản hồi. Không coi Sprint chỉ là thời gian viết mã rồi để toàn bộ kiểm thử đến cuối dự án.
+Đây là ví dụ tổ chức công việc; cây WBS hoặc bảng Sprint riêng lẻ chưa thể hiện đầy đủ cách vận hành Scrum.
 
-**Bước 5: Nối quy trình với sản phẩm bàn giao**
+#### -bước 'Liên kết công việc với sản phẩm' — Kiểm tra mỗi hoạt động tạo ra kết quả gì trong phạm vi đã cam kết.
 
-**Ý nghĩa:** Bạn cần chứng minh công việc trong quy trình thực sự tạo ra các kết quả đã cam kết.
-
-**Cách thao tác:**
-
-Lập bảng liên kết:
+Lập bảng:
 
 | Sản phẩm cần có | Công việc tạo ra |
 |---|---|
@@ -446,60 +332,42 @@ Lập bảng liên kết:
 | Bộ cài | Đóng gói, kiểm tra cài đặt |
 | Hướng dẫn sử dụng | Viết hướng dẫn, kiểm tra bằng thao tác thực tế |
 
-Nếu có sản phẩm mà chưa có công việc tạo ra, kế hoạch đang thiếu. Nếu có công việc không phục vụ phạm vi nào, cần xem lại lý do đưa vào.
-
-**Dấu hiệu hoàn thành:** Bạn nhìn được công việc theo quy trình, đồng thời truy ngược được mỗi công việc phục vụ sản phẩm nào.
+Sản phẩm chưa có công việc tạo ra nghĩa là kế hoạch đang thiếu. Công việc chưa gắn với phạm vi nào cần được xem lại lý do đưa vào.
 
 </details>
 
 <details>
-<summary>-sản phẩm 'Bảng nhiệm vụ, phân công và biểu đồ Gantt'</summary>
+<summary><strong>-sản phẩm 'Bảng nhiệm vụ, phân công và Gantt' — Xác định ai làm, làm bao lâu, phụ thuộc việc nào và thực hiện khi nào.</strong></summary>
 
-**Sản phẩm này dùng để làm gì?**
+#### -bước 'Chọn gói cần lập lịch' — Lấy một phần việc đủ nhỏ để chuyển từ WBS sang kế hoạch thực hiện.
 
-WBS cho biết có những phần việc gì. Bảng nhiệm vụ và Gantt bổ sung: **ai làm, mất bao lâu, phụ thuộc việc nào và thực hiện khi nào**.
+Chọn `2.1 — Chức năng tạo khoản thu`.
 
-Tài liệu nêu Gantt trong Bài 4.2 nhưng chưa hướng dẫn chi tiết thao tác. Phần dưới bổ sung cách làm bằng bảng để bạn thực hành ngay.
+Đọc lại đầu vào, đầu ra và điều kiện hoàn thành. Ví dụ dưới đây chỉ lập lịch cho chức năng này, chưa phải toàn dự án.
 
-**Bước 1: Chọn gói công việc để lập lịch**
+Tài liệu nêu Gantt trong Bài 4.2 nhưng chưa hướng dẫn chi tiết; cách lập bảng và tô lịch dưới đây là phần bổ sung để thực hành.
 
-**Ý nghĩa:** Bắt đầu từ một gói nhỏ giúp bạn hiểu đầy đủ cách chuyển từ WBS sang lịch.
+#### -bước 'Lập danh sách nhiệm vụ và phân công' — Mỗi nhiệm vụ có người phụ trách và kết quả phải giao.
 
-**Cách thao tác:**
+Tạo bảng:
 
-Chọn gói `2.1 — Chức năng tạo khoản thu`.
-
-Đọc lại mô tả đầu vào, đầu ra và điều kiện hoàn thành của gói. Bảng dưới chỉ lập lịch cho chức năng này, **chưa phải lịch của toàn bộ dự án**.
-
-**Bước 2: Chuyển thành các nhiệm vụ có đầu ra**
-
-**Ý nghĩa:** Một nhiệm vụ cần đủ rõ để người nhận biết phải làm gì và giao lại kết quả gì.
-
-**Cách thao tác:**
-
-Tạo bảng với dữ liệu mẫu:
-
-| Mã | Nhiệm vụ | Đầu ra | Người phụ trách |
+| Mã | Nhiệm vụ | Đầu ra | Người |
 |---|---|---|---|
-| T01 | Chốt yêu cầu tạo khoản thu | Quy tắc và trường dữ liệu đã xác nhận | A |
+| T01 | Chốt yêu cầu | Quy tắc và trường dữ liệu đã xác nhận | A |
 | T02 | Thiết kế dữ liệu | Thiết kế bảng, trường, ràng buộc | B |
 | T03 | Thiết kế giao diện | Bản thiết kế màn hình | C |
-| T04 | Lập trình xử lý và lưu dữ liệu | Phần xử lý hoạt động được | B |
+| T04 | Lập trình xử lý, lưu dữ liệu | Phần xử lý hoạt động được | B |
 | T05 | Lập trình giao diện | Màn hình nhập và hiển thị | C |
 | T06 | Tích hợp | Giao diện lưu được dữ liệu qua phần xử lý | B |
 | T07 | Kiểm thử | Kết quả kiểm tra, danh sách lỗi | D |
 | T08 | Sửa lỗi | Phiên bản đã sửa | B |
 | T09 | Kiểm tra lại | Kết quả xác nhận sau sửa | D |
 
-T08 đang dự kiến chủ yếu là lỗi phần xử lý. Nếu phát sinh lỗi giao diện, cần bố trí C và cập nhật lịch.
+T08 đang giả định chủ yếu là lỗi phần xử lý. Nếu phát sinh lỗi giao diện, cần bố trí C và cập nhật kế hoạch.
 
-**Bước 3: Điền quan hệ phụ thuộc**
+#### -bước 'Xác định phụ thuộc' — Chỉ rõ nhiệm vụ cần kết quả của nhiệm vụ nào trước khi bắt đầu.
 
-**Ý nghĩa:** Công việc có thứ tự do cần sử dụng kết quả của nhau.
-
-**Cách thao tác:**
-
-Điền mã công việc trước vào cột “Phụ thuộc”:
+Điền:
 
 | Mã | Phụ thuộc | Lý do |
 |---|---|---|
@@ -508,74 +376,48 @@ T08 đang dự kiến chủ yếu là lỗi phần xử lý. Nếu phát sinh l�
 | T03 | T01 | Thiết kế màn hình theo yêu cầu |
 | T04 | T02 | Lập trình theo thiết kế dữ liệu |
 | T05 | T03 | Lập trình theo thiết kế giao diện |
-| T06 | T04, T05 | Có cả hai phần mới tích hợp được |
+| T06 | T04, T05 | Cần cả hai phần để tích hợp |
 | T07 | T06 | Kiểm tra luồng đã tích hợp |
-| T08 | T07 | Sửa theo lỗi được phát hiện |
+| T08 | T07 | Sửa theo lỗi phát hiện |
 | T09 | T08 | Kiểm tra phiên bản sau sửa |
 
-Trong ví dụ này, hai phần lập trình song song cần thống nhất trước cách trao đổi dữ liệu và cách báo lỗi.
+T04 và T05 làm song song được khi nhóm đã thống nhất cách trao đổi dữ liệu và cách báo lỗi giữa hai phần.
 
-**Bước 4: Ước lượng thời lượng và công sức**
+#### -bước 'Ước lượng và xếp lịch' — Kết hợp thời lượng, quan hệ phụ thuộc và thời gian của người thực hiện.
 
-**Ý nghĩa:** Hai đại lượng này liên quan nhưng khác nhau:
+Phân biệt:
 
 - **Thời lượng:** Công việc kéo dài bao nhiêu ngày làm việc.
-- **Công sức:** Tổng lượng lao động cần bỏ ra, chẳng hạn ngày công.
+- **Công sức:** Tổng lượng lao động cần bỏ ra, ví dụ ngày công.
 
-**Cách thao tác:**
+Giả định mỗi người làm toàn thời gian trong khoảng được phân công. Quy ước D1 là ngày làm việc đầu tiên:
 
-Hỏi người thực hiện về khối lượng, độ khó và kinh nghiệm với việc tương tự. Sau đó điền:
+| Mã | Người | Thời lượng | Công sức | Bắt đầu | Kết thúc |
+|---|---|---:|---:|---|---|
+| T01 | A | 1 ngày | 1 ngày công | D1 | D1 |
+| T02 | B | 1 ngày | 1 ngày công | D2 | D2 |
+| T03 | C | 1 ngày | 1 ngày công | D2 | D2 |
+| T04 | B | 2 ngày | 2 ngày công | D3 | D4 |
+| T05 | C | 2 ngày | 2 ngày công | D3 | D4 |
+| T06 | B | 1 ngày | 1 ngày công | D5 | D5 |
+| T07 | D | 2 ngày | 2 ngày công | D6 | D7 |
+| T08 | B | 1 ngày | 1 ngày công | D8 | D8 |
+| T09 | D | 1 ngày | 1 ngày công | D9 | D9 |
 
-| Mã | Thời lượng mẫu | Công sức mẫu |
-|---|---:|---:|
-| T01 | 1 ngày | 1 ngày công |
-| T02 | 1 ngày | 1 ngày công |
-| T03 | 1 ngày | 1 ngày công |
-| T04 | 2 ngày | 2 ngày công |
-| T05 | 2 ngày | 2 ngày công |
-| T06 | 1 ngày | 1 ngày công |
-| T07 | 2 ngày | 2 ngày công |
-| T08 | 1 ngày | 1 ngày công |
-| T09 | 1 ngày | 1 ngày công |
+T02 và T03 cùng thực hiện ở D2 vì dùng chung đầu vào từ T01 và do hai người khác nhau làm.
 
-Ví dụ giả định mỗi người làm toàn thời gian trong khoảng được phân công, nên thời lượng và công sức của từng nhiệm vụ có cùng con số.
+Toàn bộ lịch kéo dài **9 ngày làm việc**, với tổng công sức **12 ngày công**. Hai con số khác nhau do có việc thực hiện song song.
 
-**Bước 5: Xếp lịch theo phụ thuộc và người thực hiện**
+#### -bước 'Vẽ Gantt' — Biểu diễn khoảng thời gian làm từng nhiệm vụ để nhìn rõ việc song song và nối tiếp.
 
-**Ý nghĩa:** Một lịch hợp lý phải đáp ứng cả thứ tự công việc và khả năng làm việc của từng người.
+Trong bảng tính:
 
-**Cách thao tác:**
+1. Giữ các cột mã, nhiệm vụ, người, phụ thuộc và thời lượng.
+2. Thêm các cột D1 đến D9.
+3. Tô màu ô tương ứng với thời gian thực hiện.
+4. Thêm mốc xác nhận chức năng sau khi T09 đạt yêu cầu.
 
-Quy ước D1 là ngày làm việc đầu tiên, rồi lập:
-
-| Mã | Người | Bắt đầu | Kết thúc |
-|---|---|---|---|
-| T01 | A | D1 | D1 |
-| T02 | B | D2 | D2 |
-| T03 | C | D2 | D2 |
-| T04 | B | D3 | D4 |
-| T05 | C | D3 | D4 |
-| T06 | B | D5 | D5 |
-| T07 | D | D6 | D7 |
-| T08 | B | D8 | D8 |
-| T09 | D | D9 | D9 |
-
-T02 và T03 có thể song song vì cùng có đầu vào từ T01 và do hai người khác nhau thực hiện.
-
-Lịch mẫu kéo dài **9 ngày làm việc**, trong khi tổng công sức là **12 ngày công**, do một số nhiệm vụ được thực hiện đồng thời.
-
-**Bước 6: Vẽ Gantt bằng cách tô các ô thời gian**
-
-**Ý nghĩa:** Gantt biểu diễn khoảng thời gian của từng nhiệm vụ để dễ nhìn việc song song và việc nối tiếp.
-
-**Cách thao tác trong bảng tính:**
-
-1. Giữ các cột mã, nhiệm vụ, người, phụ thuộc, thời lượng.
-2. Thêm các cột D1 đến D9 ở bên phải.
-3. Với mỗi nhiệm vụ, tô màu các ô từ ngày bắt đầu đến ngày kết thúc.
-4. Thêm mốc “Xác nhận chức năng tạo khoản thu” sau khi T09 đạt yêu cầu.
-
-Hình dung kết quả:
+Kết quả có dạng:
 
 | Nhiệm vụ | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -589,68 +431,52 @@ Hình dung kết quả:
 | T08 | | | | | | | | ● | |
 | T09 | | | | | | | | | ● |
 
-Mốc là một điểm xác nhận, thường có thời lượng bằng 0. Công việc kiểm tra để đạt mốc vẫn phải có thời lượng trong kế hoạch.
+**Mốc** là một điểm xác nhận, thường có thời lượng bằng 0. Công việc kiểm tra để đạt mốc vẫn cần được dành thời gian.
 
-**Bước 7: Kiểm tra và mở rộng ra toàn dự án**
+#### -bước 'Ghép lịch toàn dự án và kiểm tra' — Bảo đảm các chức năng dùng chung nguồn lực vẫn thực hiện được.
 
-**Ý nghĩa:** Lịch của một chức năng chưa cho biết tổng thời gian hoàn thành phần mềm.
+Lặp lại cách làm cho các gói khác, ghép vào cùng lịch rồi kiểm tra:
 
-**Cách thao tác:**
-
-Lặp lại quy trình cho các gói khác, sau đó ghép vào cùng lịch và kiểm tra:
-
-- Một người có bị giao hai nhiệm vụ toàn thời gian cùng lúc không?
+- Một người có bị giao hai việc toàn thời gian cùng lúc không?
 - Công việc có bắt đầu trước khi nhận đủ đầu vào không?
 - Có thời gian tích hợp giữa các module không?
-- Có kiểm thử toàn hệ thống, dùng thử, tài liệu và bàn giao không?
-- Có tính ngày nghỉ và thời gian chờ phản hồi không?
+- Có kiểm thử hệ thống, dùng thử, tài liệu và bàn giao không?
+- Đã tính ngày nghỉ và thời gian chờ phản hồi chưa?
 
-Ví dụ, không thể tiếp tục giao B lập trình chức năng khác trong D3–D4 nếu B đã được dành toàn thời gian cho T04.
+Ví dụ, không tiếp tục giao B một nhiệm vụ toàn thời gian khác trong D3–D4 khi B đã làm T04.
 
-**Bước 8: Theo dõi thực tế và điều chỉnh lịch**
+#### -bước 'Cập nhật theo thực tế' — Dùng tiến độ thực hiện để điều chỉnh phần kế hoạch còn lại.
 
-**Ý nghĩa:** Kế hoạch cần phản ánh kết quả thực tế để giúp ra quyết định.
+Thêm các cột:
 
-**Cách thao tác:**
+> Trạng thái — Bắt đầu thực tế — Kết thúc thực tế — Vướng mắc.
 
-Thêm các cột “Trạng thái”, “Bắt đầu thực tế”, “Kết thúc thực tế”, “Vướng mắc”.
+Nếu T04 trễ một ngày và các việc sau không có thời gian dự trữ, cập nhật T06 cùng các việc phụ thuộc. Ghi nguyên nhân, phương án xử lý và ảnh hưởng đến mốc xác nhận.
 
-Nếu T04 trễ một ngày và các công việc sau không có thời gian dự trữ, hãy cập nhật T06 và các công việc phụ thuộc. Ghi lại nguyên nhân, phương án xử lý và ảnh hưởng tới mốc xác nhận.
-
-**Dấu hiệu hoàn thành:** Mỗi nhiệm vụ có người phụ trách, đầu ra, thời lượng, phụ thuộc và vị trí trên lịch.
+Không chỉ sửa ngày của nhiệm vụ bị trễ mà bỏ qua những việc đang chờ kết quả của nó.
 
 </details>
 
 <details>
-<summary>-sản phẩm 'Sổ đăng ký rủi ro và kế hoạch ứng phó'</summary>
+<summary><strong>-sản phẩm 'Sổ đăng ký rủi ro và kế hoạch ứng phó' — Nhận diện điều có thể cản trở mục tiêu và chuẩn bị cách xử lý.</strong></summary>
 
-**Sản phẩm này dùng để làm gì?**
+#### -bước 'Thống nhất cách chấm rủi ro' — Chọn một thang đánh giá nhất quán trước khi điền bảng.
 
-Sản phẩm này giúp nhóm phát hiện trước những việc có thể cản trở mục tiêu, xác định mức ưu tiên và chuẩn bị cách xử lý.
+Tài liệu có điểm chưa thống nhất:
 
-**Lưu ý khi đọc tài liệu:** Bảng ví dụ trang 7 có các con số tương ứng với cách nhân xác suất và tác động, trong khi ma trận trang 9 dùng năm mức khác. Trang 8 còn lặp nhãn “Mức 4”, “Mức 5” ở hai dòng cuối.
+- Bảng ví dụ trang 7 có các con số tương ứng với cách nhân xác suất và tác động.
+- Ma trận trang 9 dùng năm mức với kết quả khác.
+- Hai dòng cuối phần mô tả mức độ ở trang 8 bị lặp nhãn “Mức 4”, “Mức 5”.
 
-Để thực hành nhất quán, phần dưới **chọn ma trận trang 9**. Các mức rủi ro trong ví dụ được tính lại theo ma trận đó.
+Bài thực hành này **dùng ma trận trang 9** và tính lại các ví dụ theo ma trận đó.
 
-**Bước 1: Tạo bảng ghi nhận rủi ro**
-
-**Ý nghĩa:** Rủi ro cần được ghi thành thông tin có thể giao người theo dõi.
-
-**Cách thao tác:**
+#### -bước 'Tạo bảng và mô tả rủi ro' — Ghi rõ sự kiện, nguyên nhân và hậu quả để biết cần theo dõi điều gì.
 
 Tạo các cột:
 
 > Mã — Mô tả — Nguyên nhân — Hậu quả — Xác suất — Tác động — Mức ưu tiên — Phòng ngừa — Dấu hiệu kích hoạt — Cách xử lý — Người theo dõi — Trạng thái.
 
-Tài liệu có các cột mô tả, xác suất, tác động, mức độ và phòng ngừa. Các cột còn lại được bổ sung để dễ thực hiện.
-
-**Bước 2: Viết rủi ro thành tình huống cụ thể**
-
-**Ý nghĩa:** Mô tả cụ thể giúp biết cần theo dõi điều gì và bảo vệ phần nào của kế hoạch.
-
-**Cách thao tác:**
-
-Dùng cấu trúc:
+Viết theo mẫu:
 
 > Do [nguyên nhân], có thể xảy ra [sự kiện], dẫn đến [hậu quả].
 
@@ -658,67 +484,49 @@ Ví dụ:
 
 > Do B đồng thời tham gia dự án khác, B có thể không hoàn thành T04 đúng lịch, làm chậm tích hợp và kiểm thử chức năng tạo khoản thu.
 
-Đối chiếu thêm các nhóm rủi ro được tài liệu gợi ý:
+Đối chiếu các nhóm rủi ro trong tài liệu:
 
-| Nhóm | Ví dụ cần xem xét |
+| Nhóm | Ví dụ |
 |---|---|
 | Nhân sự | Thành viên bận nhiều dự án hoặc rời nhóm |
 | Yêu cầu | Bổ sung, thay đổi yêu cầu |
 | Tài liệu | Hồ sơ kỹ thuật chưa hoàn thiện |
-| Trao đổi | Hiểu sai yêu cầu do thiếu tương tác |
-| Tiến độ | Công việc trước chậm làm việc sau bị chậm |
-| Hợp đồng, thủ tục | Điều kiện phê duyệt hoặc hợp đồng làm đình trệ dự án |
+| Trao đổi | Hiểu sai nghiệp vụ do thiếu tương tác |
+| Tiến độ | Việc trước chậm làm việc sau bị chậm |
+| Hợp đồng, thủ tục | Điều kiện phê duyệt làm đình trệ dự án |
 | Nghiệm thu | Khách hàng không chấp nhận sản phẩm |
-| Ngân sách | Nguồn kinh phí bị cắt giảm |
+| Ngân sách | Kinh phí bị cắt giảm |
 | Ước lượng | Thời gian và chi phí được dự tính quá lạc quan |
 
-Chỉ đưa vào sổ những rủi ro có ý nghĩa với dự án của bạn, kèm lý do đánh giá.
+Chỉ đưa vào những rủi ro có ý nghĩa với dự án, kèm lý do đánh giá.
 
-**Bước 3: Chấm xác suất**
-
-**Ý nghĩa:** Xác suất thể hiện khả năng sự kiện xảy ra.
-
-**Cách thao tác:**
+#### -bước 'Chấm xác suất' — Đánh giá khả năng sự kiện xảy ra dựa trên thông tin hiện có.
 
 | Điểm | Mức | Cách hiểu |
 |---|---|---|
 | 1 | Thấp | Hiếm xảy ra, ít dấu hiệu cho thấy sẽ xảy ra |
-| 2 | Vừa | Có cơ sở hợp lý hoặc đã từng xảy ra thỉnh thoảng |
+| 2 | Vừa | Có cơ sở hợp lý hoặc từng xảy ra thỉnh thoảng |
 | 3 | Cao | Có dấu hiệu rõ hoặc thường xuyên xảy ra |
 
-Ví dụ, B đã thông báo phải dành nhiều ngày cho dự án khác thì đánh giá khả năng thiếu thời gian phải dựa vào lịch cam kết đó.
+Ví dụ, nếu B đã thông báo lịch làm dự án khác, phải đối chiếu lịch đó với T04 để đánh giá khả năng thiếu thời gian.
 
-Không tự quy đổi ba mức thành tỷ lệ phần trăm cụ thể nếu nhóm chưa có quy ước.
+Không tự đổi ba mức thành tỷ lệ phần trăm nếu nhóm chưa có quy ước.
 
-**Bước 4: Chấm tác động**
+#### -bước 'Chấm tác động' — Đánh giá hậu quả nếu rủi ro thực sự xảy ra.
 
-**Ý nghĩa:** Tác động trả lời: nếu xảy ra, dự án bị ảnh hưởng đến mức nào?
+Tài liệu gợi ý xem xét phạm vi, chất lượng và chi phí:
 
-**Cách thao tác:**
-
-Tài liệu gợi ý đánh giá theo phạm vi, chất lượng và chi phí, với các khoảng dưới 5%, từ 5% đến 10%, trên 10%.
-
-Có thể viết lại thang thực hành:
-
-| Điểm | Mức | Ví dụ căn cứ |
+| Điểm | Mức | Căn cứ thực hành |
 |---|---|---|
 | 1 | Thấp | Ảnh hưởng nhỏ, dưới 5% theo chỉ tiêu đã chọn |
 | 2 | Vừa | Ảnh hưởng từ 5% đến 10%, cần điều chỉnh có kiểm soát |
 | 3 | Cao | Ảnh hưởng trên 10% hoặc làm một mục tiêu quan trọng không đạt |
 
-Cột chi phí ở mức vừa trong bản gốc có nội dung bị lặp từ cột chất lượng; cách diễn đạt trên đã được làm rõ để sử dụng.
+Cột chi phí mức vừa trong tài liệu bị lặp nội dung từ chất lượng; bảng trên đã diễn đạt lại để sử dụng.
 
-Nếu đánh giá nhiều mặt, nhóm có thể thống nhất **lấy điểm cao nhất** làm tác động chung. Đây là quy ước bổ sung của bài thực hành, cần ghi rõ.
+Nếu xét nhiều mặt, nhóm có thể quy ước **lấy điểm tác động cao nhất**. Ví dụ tăng chi phí 3% nhưng ảnh hưởng 15% phạm vi thì lấy tác động bằng 3. Đây là quy ước bổ sung, cần ghi rõ trong kế hoạch.
 
-Ví dụ, một rủi ro tăng chi phí 3% nhưng ảnh hưởng 15% phạm vi thì theo quy ước này lấy tác động bằng 3.
-
-**Bước 5: Tra ma trận để xác định mức ưu tiên**
-
-**Ý nghĩa:** Kết hợp khả năng xảy ra và hậu quả để biết rủi ro nào cần quan tâm trước.
-
-**Cách thao tác:**
-
-Dùng đúng ma trận trang cuối:
+#### -bước 'Tra mức ưu tiên' — Kết hợp xác suất và tác động bằng đúng ma trận đã chọn.
 
 | Xác suất \ Tác động | Thấp — 1 | Vừa — 2 | Cao — 3 |
 |---|---:|---:|---:|
@@ -732,72 +540,62 @@ Ví dụ:
 - Xác suất 2, tác động 3 → **mức 4**.
 - Xác suất 3, tác động 3 → **mức 5**.
 
-**Không nhân hai điểm rồi dùng kết quả làm mức của ma trận này.** Chẳng hạn 2 × 2 = 4, nhưng ô tương ứng trong ma trận là mức 3.
+Không nhân hai điểm rồi dùng kết quả làm mức của ma trận này.
 
-Theo thứ tự từ nhẹ đến nặng, năm mức được hiểu là: hầu như không ảnh hưởng → không đáng kể → có ảnh hưởng nhưng dự án vẫn tiếp tục → ảnh hưởng đáng kể → không thể tiếp tục trong điều kiện hiện tại.
+Diễn giải năm mức theo thứ tự tăng dần:
 
-**Bước 6: Viết phòng ngừa và cách xử lý khi xảy ra**
+| Mức | Ý nghĩa |
+|---|---|
+| 1 | Hầu như không ảnh hưởng |
+| 2 | Không ảnh hưởng đáng kể |
+| 3 | Có ảnh hưởng nhưng dự án vẫn thực hiện được |
+| 4 | Ảnh hưởng đáng kể, một số công việc không thực hiện được |
+| 5 | Không thể tiếp tục trong điều kiện hiện tại |
 
-**Ý nghĩa:** Phòng ngừa làm giảm khả năng hoặc hậu quả; cách xử lý cho biết nhóm phải làm gì khi dấu hiệu xuất hiện hoặc sự kiện xảy ra.
+#### -bước 'Viết biện pháp ứng phó' — Chuẩn bị cả việc làm trước và việc làm khi có dấu hiệu xảy ra.
 
-**Cách thao tác:**
-
-Ví dụ cho rủi ro thiếu nhân sự:
+Ví dụ rủi ro thiếu nhân sự:
 
 | Nội dung | Ví dụ điền |
 |---|---|
-| Phòng ngừa | Xác nhận lịch tham gia; chia sẻ kiến thức; cập nhật mã nguồn và hướng dẫn thường xuyên |
+| Phòng ngừa | Xác nhận lịch tham gia; chia sẻ kiến thức; cập nhật mã nguồn và hướng dẫn |
 | Dấu hiệu kích hoạt | B báo không thể dành đủ thời gian đã cam kết cho T04 |
-| Cách xử lý | Đánh giá phần việc còn lại, phân công lại phù hợp, cập nhật lịch và báo ảnh hưởng |
+| Cách xử lý | Đánh giá việc còn lại, phân công lại, cập nhật lịch và báo ảnh hưởng |
 | Người theo dõi | A |
 | Trạng thái | Đang theo dõi |
 
-Người nhận việc thay thế phải có thời gian và năng lực phù hợp; không chỉ ghi tên dự phòng.
+Người được phân công thay thế phải có thời gian và năng lực phù hợp.
 
-**Bước 7: Điền bảng mẫu và sắp xếp ưu tiên**
-
-**Ý nghĩa:** Có danh sách cụ thể để dùng trong họp tiến độ.
-
-**Cách thao tác:**
-
-Các điểm dưới đây là đánh giá giả định để minh họa:
+Điền tiếp các rủi ro mẫu; các điểm dưới đây là giả định để thực hành:
 
 | Mã | Rủi ro | Xác suất | Tác động | Mức | Hành động chính | Theo dõi |
 |---|---|---:|---:|---:|---|---|
 | R01 | Thành viên không đủ thời gian | 2 | 3 | 4 | Chốt lịch, chia sẻ kiến thức, chuẩn bị phân công lại | A |
-| R02 | Khách hàng bổ sung yêu cầu | 2 | 2 | 3 | Ghi nhận thay đổi, đánh giá ảnh hưởng trước khi nhận làm | A |
+| R02 | Bổ sung yêu cầu | 2 | 2 | 3 | Đánh giá ảnh hưởng trước khi nhận làm | A |
 | R03 | Tài liệu kỹ thuật chưa đủ | 1 | 3 | 3 | Kiểm tra tài liệu tại từng mốc | B |
-| R04 | Nhóm hiểu sai nghiệp vụ | 2 | 2 | 3 | Dùng ví dụ dữ liệu và xác nhận quy tắc với kế toán | A |
-| R05 | Ước lượng quá lạc quan | 2 | 3 | 4 | Nhờ người thực hiện rà soát ước lượng và cập nhật theo kết quả thực tế | A |
-| R06 | Khách hàng từ chối nghiệm thu | 1 | 3 | 3 | Chốt tiêu chí sớm, tổ chức dùng thử trước bàn giao | A |
+| R04 | Hiểu sai nghiệp vụ | 2 | 2 | 3 | Xác nhận quy tắc bằng dữ liệu mẫu | A |
+| R05 | Ước lượng quá lạc quan | 2 | 3 | 4 | Rà soát ước lượng cùng người thực hiện | A |
+| R06 | Khách hàng từ chối nghiệm thu | 1 | 3 | 3 | Chốt tiêu chí sớm, tổ chức dùng thử | A |
 
-Sắp xếp mức cao trước. Với rủi ro cùng mức, ưu tiên xem xét rủi ro sắp tác động hoặc ảnh hưởng trực tiếp đến mốc quan trọng.
+Xếp mức cao trước. Với cùng mức, ưu tiên rủi ro sắp tác động hoặc ảnh hưởng trực tiếp đến mốc quan trọng.
 
-**Bước 8: Đưa hành động ứng phó vào kế hoạch công việc**
+#### -bước 'Đưa hành động vào lịch' — Biến biện pháp phòng ngừa thành nhiệm vụ có người làm và thời hạn.
 
-**Ý nghĩa:** Một hành động chỉ nằm trong bảng rủi ro có thể bị quên. Hành động cần thời gian phải xuất hiện trong lịch.
+Ví dụ để giảm R04:
 
-**Cách thao tác:**
+| Nội dung | Điền vào kế hoạch |
+|---|---|
+| Nhiệm vụ | Xác nhận quy tắc tính phí bằng dữ liệu mẫu |
+| Người phụ trách | A |
+| Thời điểm | Trước thiết kế dữ liệu |
+| Đầu ra | Các trường hợp tính phí được kế toán xác nhận |
 
-Ví dụ, để giảm rủi ro hiểu sai cách tính phí:
+Tương tự, thêm nhiệm vụ rà soát hồ sơ trước bàn giao để giảm rủi ro thiếu tài liệu.
 
-- Thêm nhiệm vụ “Xác nhận quy tắc tính phí bằng dữ liệu mẫu”.
-- Giao A phụ trách.
-- Đặt trước thiết kế dữ liệu.
-- Đầu ra là các trường hợp tính phí đã được kế toán xác nhận.
-
-Với rủi ro thiếu tài liệu, thêm nhiệm vụ rà soát hồ sơ trước mốc bàn giao.
-
-**Bước 9: Cập nhật khi có thông tin mới**
-
-**Ý nghĩa:** Xác suất và tác động thay đổi theo tình hình dự án.
-
-**Cách thao tác:**
+#### -bước 'Theo dõi và cập nhật' — Điều chỉnh đánh giá theo tình hình và xử lý ngay khi sự kiện xảy ra.
 
 Trong buổi theo dõi tiến độ, kiểm tra dấu hiệu, cập nhật điểm, người xử lý và hạn hành động.
 
-Nếu sự kiện đã xảy ra, ví dụ B thực sự không thể tiếp tục T04, hãy ghi nhận đó là **vấn đề hiện tại**, thực hiện phương án xử lý và cập nhật Gantt.
-
-**Dấu hiệu hoàn thành:** Mỗi rủi ro quan trọng đều có căn cứ đánh giá, người theo dõi và hành động cụ thể gắn với kế hoạch.
+Nếu B thực sự không thể tiếp tục T04, ghi nhận đó là **vấn đề hiện tại**, thực hiện phương án phân công lại và cập nhật Gantt. Khi đó, chỉ ghi “tiếp tục theo dõi rủi ro” sẽ không đủ.
 
 </details>
