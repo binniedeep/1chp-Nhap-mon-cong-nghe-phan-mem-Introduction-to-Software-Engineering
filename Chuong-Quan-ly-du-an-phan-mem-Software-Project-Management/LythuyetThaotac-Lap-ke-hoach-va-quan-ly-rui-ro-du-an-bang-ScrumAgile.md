@@ -1,309 +1,1075 @@
--🔍**LythuyetThaotac: Khởi tạo dự án, phân rã công việc WBS, lập biểu đồ Gantt và quản lý rủi ro** — tư liệu: Huong dan xay dung Ke hoach du an(4).pdf
+-🔍LythuyetThaotac: **Xây dựng kế hoạch dự án phần mềm: Project Charter, WBS, Gantt Chart và quản lý rủi ro** — Tài liệu: **Huong dan xay dung Ke hoach du an(5).pdf**. Huong dan xay dung Ke hoach du an(5).pdf
 
-**Giới thiệu bài toán mẫu để học cách thao tác:** Ban quản trị chung cư Blue Moon đang quản lý hộ dân và thu phí bằng Excel. Nhóm dự án cần xây dựng phần mềm gồm ba module: **quản lý thu phí, quản lý người dùng và quản lý hộ gia đình**.
+**Giới thiệu bài toán mẫu để học cách thao tác**
 
-Từ bài toán này, bạn tạo bốn sản phẩm: **tuyên ngôn dự án → cấu trúc phân cấp công việc WBS → lịch trình Gantt → bảng quản lý rủi ro**. Các sản phẩm phải liên kết với nhau: phạm vi trong tuyên ngôn quyết định công việc trong WBS; công việc trong WBS được đưa vào Gantt; rủi ro cho biết những gì có thể làm các công việc đó không hoàn thành như dự kiến.
+Xuyên suốt các sản phẩm bên dưới, chúng ta sử dụng dự án **xây dựng phần mềm quản lý và thu phí chung cư Blue Moon**.
 
-Ví dụ dưới đây giữ ngân sách **100 triệu đồng** và các mốc **quý IV/2023** của tài liệu. Tên thành viên, phân bổ ngân sách, công việc chi tiết và tiêu chí kiểm tra bổ sung là **dữ liệu minh họa để thực hành**.
+Ban quản trị đang dùng Excel để quản lý hộ gia đình và các khoản thu nên dễ bỏ sót khoản chưa đóng, khó tổng hợp số tiền đã thu. Dự án cần tạo phần mềm gồm ba module: **quản lý thu phí, quản lý người dùng và quản lý hộ gia đình**.
+
+Quy ước cho ví dụ:
+
+```text
+Mã dự án: BM-2027
+Tên dự án: Phần mềm quản lý và thu phí chung cư Blue Moon
+
+Quy mô giả định:
+- 300 hộ gia đình.
+- Khoảng 1.000 nhân khẩu.
+- 5 loại phí ban đầu.
+- 3 vai trò sử dụng: quản trị viên, kế toán, cán bộ quản lý cư dân.
+
+Ngân sách tối đa: 100.000.000 đồng.
+Thời gian: 04/01/2027 đến 26/03/2027.
+
+Nhóm thực hiện:
+- Nam: quản lý dự án, phân tích yêu cầu.
+- Huy: lập trình.
+- Lan: lập trình.
+- Mai: kiểm thử và hướng dẫn sử dụng.
+```
+
+**Tên người, số liệu và lịch trên là dữ liệu minh họa.** Lịch thực hành tính từ thứ Hai đến thứ Sáu, chưa trừ ngày lễ, Tết; khi lập kế hoạch thật phải cập nhật lịch nghỉ.
+
+Tài liệu gốc hướng dẫn ba nội dung chính: tuyên ngôn dự án, WBS/lịch Gantt và quản lý rủi ro. Tôi tách thành **năm sản phẩm để dễ thao tác**; các trường bổ sung nhằm giúp bạn biến nội dung hướng dẫn thành một kế hoạch có thể sử dụng.
 
 <details>
 <summary>-sản phẩm 'Tuyên ngôn dự án — Project Charter'</summary>
 
-**Sản phẩm này là gì?** Đây là tài liệu xác lập lý do thực hiện dự án, kết quả cần đạt, phạm vi, nguồn lực và quyền hạn thực hiện. Theo tài liệu, nhà tài trợ ban hành tuyên ngôn để chính thức cho phép dự án tồn tại và trao quyền sử dụng nguồn lực cho người quản lý dự án.
+Tuyên ngôn dự án là tài liệu chính thức xác nhận dự án được triển khai, xác định các cam kết ban đầu và trao quyền cho người quản lý dự án. Theo tài liệu, nhà tài trợ là bên ban hành tài liệu này; nhóm dự án có thể hỗ trợ soạn thảo.
 
-Bạn có thể tạo một tài liệu Word gồm các nhóm thông tin sau.
+**Đầu vào cần chuẩn bị:** vấn đề của khách hàng, nhu cầu sử dụng, nguồn kinh phí, nhân sự dự kiến, thời hạn và những điều kiện phải tuân thủ.
 
-**Các thuộc tính cần tạo**
+**Cách tạo:** mở Word hoặc công cụ soạn thảo, tạo các mục dưới đây, trao đổi với các bên để điền thông tin rồi trình phê duyệt.
 
-- **“Tên dự án”**: Là tên định danh chung của dự án — phải được dùng thống nhất trong WBS, Gantt và bảng rủi ro — điền: **“Xây dựng phần mềm quản lý và thu phí ở chung cư Blue Moon”**.
+- **'Tên dự án':** tên nhận diện công việc mà tổ chức quyết định thực hiện — Chọn tên thể hiện hành động, sản phẩm và nơi áp dụng; dùng thống nhất tên này trong WBS, lịch trình và bảng rủi ro.
 
-- **“Nhà tài trợ dự án”**: Là cá nhân bảo trợ, hỗ trợ quyết định và cấp hoặc huy động nguồn lực cho dự án — liên hệ với ngân sách, phê duyệt và xử lý vấn đề vượt quyền quản lý dự án — điền tên, chức danh của người được tổ chức giao vai trò này; ví dụ: **“Ông Minh, Giám đốc Công ty ABC”**.
+  ```text
+  Xây dựng phần mềm quản lý và thu phí chung cư Blue Moon.
+  ```
 
-- **“Cơ quan tài trợ”**: Là tổ chức đứng sau việc tài trợ — liên hệ với nhà tài trợ và nguồn kinh phí — điền: **“Công ty ABC”**. Cần phân biệt tên tổ chức với tên cá nhân đại diện.
+- **'Nhà tài trợ dự án':** cá nhân bảo trợ dự án, có thẩm quyền hỗ trợ nguồn lực và quyết định những vấn đề vượt quyền quản lý dự án — Lấy từ quyết định giao nhiệm vụ hoặc thỏa thuận với đơn vị đầu tư.
 
-- **“Mức độ ảnh hưởng của dự án”**: Mô tả dự án tác động đến ai và thay đổi cách làm việc nào — lấy đầu vào từ hiện trạng và nhóm người sử dụng — điền: **“Phần mềm nội bộ, thay đổi cách quản lý thông tin hộ dân và thu phí của Ban quản trị Blue Moon”**.
+  ```text
+  Nhà tài trợ: ông Minh, đại diện được Ban quản trị giao quyền bảo trợ dự án.
 
-- **“Người quản lý dự án”**: Là người điều phối công việc, nguồn lực, tiến độ và báo cáo — phải xuất hiện nhất quán trong phân công WBS, Gantt và chiến lược truyền thông — điền: **“Nguyễn An — quản lý dự án”**, kèm nơi công tác, điện thoại và email thực tế.
+  Trách nhiệm:
+  - Phê duyệt tuyên ngôn dự án.
+  - Quyết định các thay đổi vượt thẩm quyền quản lý dự án.
+  - Hỗ trợ giải quyết trở ngại về nguồn lực.
+  ```
 
-- **“Thành viên dự án”**: Là danh sách những người trực tiếp thực hiện — là đầu vào để phân công công việc và kiểm tra khả năng đáp ứng lịch trình — tạo các cột **họ tên, nơi công tác, điện thoại, email**. Ví dụ: **Bình phụ trách yêu cầu; Chi phụ trách lập trình; Dũng phụ trách kiểm thử**.
+- **'Cơ quan tài trợ':** tổ chức cấp hoặc chịu trách nhiệm về kinh phí — Điền tên tổ chức từ thỏa thuận đầu tư; phân biệt tổ chức này với cá nhân nhà tài trợ.
 
-- **“Các bên liên quan và trách nhiệm”**: Là các cá nhân, đơn vị có ảnh hưởng hoặc chịu ảnh hưởng bởi dự án — liên hệ với việc cung cấp yêu cầu, phản hồi, nghiệm thu và hỗ trợ triển khai — điền rõ từng vai trò. Ví dụ: **trưởng ban quản trị xác nhận phạm vi; kế toán giải thích cách thu phí và dùng thử; đại diện Công ty ABC phối hợp hợp đồng**.
+  ```text
+  Cơ quan tài trợ: Ban quản trị chung cư Blue Moon.
+  Ngân sách được phê duyệt: tối đa 100.000.000 đồng.
+  ```
 
-- **“Bối cảnh và động cơ”**: Là hiện trạng và nguyên nhân khiến dự án cần được thực hiện — cung cấp căn cứ cho mục đích và mục tiêu — điền: **“Thông tin đang nằm ở nhiều bảng Excel, khó tổng hợp khoản thu và theo dõi biến động hộ dân”**.
+- **'Mức độ ảnh hưởng của dự án':** phạm vi hoạt động và nhóm người chịu tác động khi sản phẩm được đưa vào sử dụng — Xác định bộ phận nào đổi cách làm việc, dữ liệu nào được chuyển sang quản lý bằng phần mềm.
 
-- **“Mục đích dự án”**: Là nhu cầu nghiệp vụ dự án cần giải quyết — được rút ra từ vấn đề trong bối cảnh, sau đó cụ thể hóa thành mục tiêu — điền: **“Hỗ trợ Ban quản trị quản lý tập trung hộ dân, các loại phí và tình hình đóng phí”**.
+  ```text
+  Phần mềm sử dụng nội bộ tại chung cư Blue Moon.
 
-- **“Mục tiêu đo lường được”**: Là kết quả có thể kiểm tra để xác định dự án đạt yêu cầu hay chưa — phải liên hệ với phạm vi và tiêu chí nghiệm thu; đầu vào là nhu cầu đã thống nhất — điền: **“Phần mềm hỗ trợ quản lý 100% loại phí và các trường thông tin hộ dân thuộc danh mục đã được hai bên xác nhận”**. Muốn đo “100%”, cần có danh mục làm mẫu số; chẳng hạn hỗ trợ đủ **5/5 loại phí đã thống nhất**.
+  Ảnh hưởng:
+  - Kế toán chuyển từ theo dõi thu phí bằng Excel sang phần mềm.
+  - Cán bộ cư dân cập nhật thông tin hộ gia đình trên phần mềm.
+  - Ban quản trị xem báo cáo thu phí tập trung.
+  ```
 
-- **“Sản phẩm bàn giao”**: Là các đầu ra phải chuyển giao khi hoàn thành — mỗi đầu ra phải được tạo ra bởi công việc trong WBS và có mốc bàn giao trong Gantt — liệt kê **tên sản phẩm, người nhận và điều kiện nhận**. Theo mẫu PDF, gồm bộ cài, chứng nhận bản quyền, hướng dẫn sử dụng, hướng dẫn cài đặt; mã nguồn, đặc tả yêu cầu, tài liệu thiết kế, kiểm thử, cấu trúc mã nguồn, API và tài liệu dự án.
+- **'Người quản lý dự án':** người chịu trách nhiệm điều phối thực hiện và theo dõi mục tiêu dự án — Điền họ tên, đơn vị, thông tin liên hệ và quyền hạn được giao.
 
-- **“Phạm vi công việc được thực hiện”**: Là những loại công việc nhóm cam kết làm — quyết định các nhánh công việc cần có trong WBS — điền: **“Đặc tả yêu cầu, phân tích, thiết kế, lập trình, kiểm thử và triển khai phần mềm”**.
+  ```text
+  Họ tên: Nam.
+  Nơi công tác: Nhóm phát triển BM-2027.
+  Email minh họa: nam@example.com.
+  Điện thoại: bổ sung số liên hệ công việc.
 
-- **“Phạm vi sản phẩm”**: Là những chức năng, module phần mềm phải cung cấp — là đầu vào trực tiếp cho WBS theo sản phẩm bàn giao — điền ba module: **quản lý thu phí; quản lý người dùng; quản lý hộ gia đình**.
+  Quyền hạn:
+  - Phân công công việc cho nhóm.
+  - Điều chỉnh phân công trong ngân sách và thời hạn đã duyệt.
+  - Trình nhà tài trợ khi cần thay đổi phạm vi hoặc tăng ngân sách.
+  ```
 
-- **“Ngoài phạm vi”**: Là những công việc dự án không cam kết thực hiện — giúp tránh việc đưa thêm công việc vào WBS mà chưa điều chỉnh kế hoạch — điền theo tài liệu: **“Không bao gồm nhập liệu thông tin đầu vào như nhân khẩu, hộ khẩu và các loại phí”**. Việc thiết kế chức năng nhập liệu vẫn nằm trong phạm vi nếu yêu cầu có chức năng đó; việc nhập toàn bộ dữ liệu thật ban đầu là công việc khác.
+- **'Thành viên dự án':** những người trực tiếp thực hiện công việc — Chọn theo năng lực cần có, sau đó ghi thông tin liên hệ, vai trò và khả năng tham gia.
 
-- **“Ngân sách”**: Là tổng kinh phí được phép sử dụng — phải đủ cho các công việc đã xác định và phù hợp với giới hạn dự án — điền: **100.000.000 đồng**. Có thể minh họa phân bổ **80 triệu xây dựng phần mềm + 10 triệu quản lý dự án + 10 triệu dự phòng**. Tổng các khoản phải bằng ngân sách chung.
+  ```text
+  Huy:
+  - Vai trò: lập trình module thu phí, tích hợp.
+  - Email minh họa: huy@example.com.
 
-- **“Lịch trình và mốc chính”**: Là thời điểm bắt đầu, bàn giao và hoàn thành dự kiến — ràng buộc lịch chi tiết trong Gantt — điền theo PDF: **thực hiện trong quý IV/2023; dùng thử lần đầu ngày 30/11; bàn giao chính thức ngày 15/12; hoàn thành ngày 30/12**.
+  Lan:
+  - Vai trò: lập trình module người dùng và hộ gia đình.
+  - Email minh họa: lan@example.com.
 
-- **“Rủi ro sơ bộ”**: Là những sự kiện chưa chắc xảy ra nhưng có thể ảnh hưởng dự án — được phân tích chi tiết trong bảng quản lý rủi ro — điền: **“Khách hàng thay đổi yêu cầu sau khi đã thiết kế, làm tăng công sức và có thể chậm mốc 30/11”**.
+  Mai:
+  - Vai trò: kiểm thử, tài liệu hướng dẫn sử dụng.
+  - Email minh họa: mai@example.com.
 
-- **“Giả định”**: Là điều nhóm tạm coi là đúng để lập kế hoạch, nhưng cần theo dõi xác nhận — nếu giả định không đúng, lịch trình hoặc chi phí có thể phải thay đổi — điền: **“Kế toán chung cư có thể tham gia dùng thử và phản hồi đúng lịch”**.
+  Điện thoại và mức độ tham gia:
+  - Bổ sung theo xác nhận thực tế của từng thành viên.
+  ```
 
-- **“Ràng buộc”**: Là giới hạn bắt buộc phải tuân thủ — ảnh hưởng cách lựa chọn nhân lực, lịch trình và giải pháp — điền theo PDF: **“Thời gian không quá bốn tháng; tổng chi phí không vượt 100 triệu đồng”**.
+- **'Các bên liên quan và trách nhiệm':** cá nhân hoặc đơn vị có thể ảnh hưởng đến dự án hoặc chịu ảnh hưởng từ dự án — Xác định ai cung cấp yêu cầu, ai sử dụng, ai nghiệm thu và ai hỗ trợ triển khai.
 
-- **“Phụ thuộc bên ngoài”**: Là điều kiện do người hoặc tổ chức ngoài nhóm thực hiện cung cấp — liên hệ với các công việc phải chờ trong Gantt và rủi ro chậm tiến độ — điền: **“Ban quản trị cung cấp quy định thu phí, mẫu biểu và người có thẩm quyền xác nhận yêu cầu”**.
+  ```text
+  Đại diện khách hàng: ông Cường, trưởng Ban quản trị.
+  - Xác nhận phạm vi nghiệp vụ.
+  - Đại diện khách hàng nghiệm thu theo thẩm quyền được giao.
 
-- **“Chiến lược truyền thông”**: Là cách các bên trao đổi và nhận thông tin dự án — lấy đầu vào từ danh sách bên liên quan và các mốc cần quyết định — điền **người gửi, người nhận, nội dung, kênh và tần suất**. Ví dụ: **An gửi báo cáo tiến độ hằng tuần qua email; nhóm họp nhanh đầu ngày; khách hàng và nhà tài trợ họp tại các mốc bàn giao**.
+  Đại diện người dùng: bà An, kế toán.
+  - Cung cấp quy tắc thu phí.
+  - Thử nghiệm chức năng và phản hồi kết quả.
 
-- **“Phê duyệt”**: Là phần ghi nhận các bên có thẩm quyền chấp thuận tuyên ngôn — xác nhận phạm vi, ngân sách, lịch trình và trách nhiệm đã thống nhất — tạo các cột **vai trò, họ tên, chữ ký, ngày ký** cho nhà tài trợ, đại diện cơ quan tài trợ và người quản lý dự án. Khi làm bài mẫu, có thể để trống chữ ký.
+  Bộ phận kỹ thuật tòa nhà:
+  - Cung cấp máy tính và quyền cài đặt.
+  - Phối hợp triển khai.
+  ```
 
-- **“Ghi chú”**: Là thông tin bổ sung giúp hiểu đúng tài liệu — dùng cho những điều chưa phù hợp đặt vào trường khác, nhưng không thay thế các cam kết chính — ví dụ: **“Danh mục loại phí được xác nhận trong phụ lục yêu cầu”**.
+- **'Bối cảnh và động cơ':** tình trạng hiện tại và nguyên nhân khiến dự án cần được thực hiện — Lấy thông tin từ phỏng vấn, quan sát quy trình và kiểm tra các biểu mẫu đang sử dụng.
 
-**Ví dụ liên kết đầy đủ giữa các thuộc tính**
+  ```text
+  Ban quản trị đang quản lý 300 hộ gia đình bằng nhiều tệp Excel.
 
-Hiện trạng **quản lý bằng Excel khó tổng hợp** tạo ra mục đích **quản lý tập trung việc thu phí**. Mục đích được cụ thể hóa thành mục tiêu **hỗ trợ đủ 5 loại phí đã thống nhất**.
+  Vấn đề:
+  - Thông tin hộ gia đình bị nhập lặp.
+  - Khó xác định hộ chưa hoàn thành nghĩa vụ đóng phí.
+  - Kế toán phải tổng hợp báo cáo thủ công.
 
-Mục tiêu dẫn đến phạm vi **module quản lý thu phí**, rồi tạo ra sản phẩm bàn giao **phần mềm và tài liệu sử dụng**. Nhóm phải bố trí người xây dựng, kiểm thử và bàn giao trước các mốc đã cam kết trong ngân sách 100 triệu đồng.
+  Động cơ:
+  - Tập trung dữ liệu và giảm thao tác tổng hợp.
+  ```
 
-Để làm được, nhóm phụ thuộc vào việc kế toán cung cấp quy định tính phí. Nếu việc cung cấp chậm, rủi ro tiến độ xuất hiện. Người quản lý phải phản ánh trong báo cáo và điều chỉnh công việc phù hợp với ràng buộc đã được phê duyệt.
+- **'Mục đích dự án':** nhu cầu nghiệp vụ lớn mà dự án hướng đến giải quyết — Viết dựa trên vấn đề ở phần bối cảnh; mô tả lợi ích cần đạt trước khi liệt kê chức năng.
 
-**Cách kiểm tra sản phẩm:** Mỗi mục tiêu phải có phạm vi thực hiện tương ứng; mỗi sản phẩm bàn giao phải có người nhận; lịch trình, ngân sách và nhân lực phải đủ để tạo ra các đầu ra đã cam kết.
+  ```text
+  Hỗ trợ Ban quản trị quản lý tập trung hộ gia đình, nhân khẩu
+  và các khoản thu; giúp kế toán theo dõi tình trạng đóng phí
+  và lập báo cáo theo kỳ.
+  ```
+
+- **'Mục tiêu đo lường được':** kết quả cụ thể dùng để đánh giá dự án có đạt yêu cầu hay không — Chọn chỉ tiêu có số lượng, điều kiện kiểm tra và thời hạn; xác nhận với khách hàng trước khi đưa vào cam kết.
+
+  ```text
+  MT01: Trước 19/03/2027, phần mềm hỗ trợ đầy đủ 5 loại phí
+        trong danh mục đã được khách hàng xác nhận.
+
+  MT02: Phần mềm lưu và tra cứu được bộ dữ liệu kiểm thử gồm
+        300 hộ gia đình và 1.000 nhân khẩu.
+
+  MT03: Báo cáo tổng tiền đã thu và chưa thu khớp với kết quả
+        đối chiếu của bộ dữ liệu nghiệm thu.
+
+  MT04: Hoàn thành toàn bộ 30 tình huống nghiệm thu đã thống nhất,
+        không còn lỗi được các bên phân loại là nghiêm trọng.
+
+  MT05: Hoàn thành bàn giao trước hoặc trong ngày 26/03/2027,
+        tổng chi phí không vượt 100.000.000 đồng.
+  ```
+
+  Khi dùng những từ như “100%”, phải chỉ rõ **100% của danh mục hoặc tập yêu cầu nào**.
+
+- **'Sản phẩm bàn giao':** các đầu ra khách hàng hoặc chủ đầu tư sẽ nhận — Lấy từ hợp đồng, phạm vi và yêu cầu nghiệm thu; ghi tên cụ thể để sau này đưa vào WBS.
+
+  ```text
+  Bàn giao cho khách hàng:
+  - Bộ cài phần mềm.
+  - Hướng dẫn cài đặt.
+  - Hướng dẫn sử dụng.
+  - Hồ sơ quyền sử dụng phần mềm theo thỏa thuận.
+  - Biên bản nghiệm thu và bàn giao.
+
+  Bàn giao cho đơn vị sở hữu mã nguồn theo thỏa thuận:
+  - Mã nguồn.
+  - Tài liệu đặc tả yêu cầu.
+  - Tài liệu phân tích và thiết kế.
+  - Tài liệu kiểm thử.
+  - Tài liệu cấu trúc mã nguồn.
+  - Tài liệu API nếu có API.
+  - Hồ sơ quản lý dự án.
+  ```
+
+- **'Phạm vi công việc của dự án':** những hoạt động nhóm cam kết thực hiện và những hoạt động nằm ngoài cam kết — Lấy từ danh sách bàn giao, điều kiện triển khai và thỏa thuận trách nhiệm.
+
+  ```text
+  Bao gồm:
+  - Khảo sát và đặc tả yêu cầu.
+  - Phân tích, thiết kế.
+  - Lập trình, tích hợp, kiểm thử.
+  - Cài đặt và hướng dẫn sử dụng.
+  - Soạn tài liệu và bàn giao.
+
+  Không bao gồm:
+  - Nhập toàn bộ dữ liệu cư dân thật thay khách hàng.
+  - Mua máy tính mới.
+  - Vận hành và bảo trì dài hạn sau khi kết thúc hợp đồng.
+
+  Dữ liệu kiểm thử do nhóm tạo để kiểm tra phần mềm
+  không đồng nghĩa với việc nhận nhập dữ liệu thật.
+  ```
+
+- **'Phạm vi sản phẩm':** chức năng mà phần mềm sẽ cung cấp — Chọn từ các nhu cầu đã được xác nhận; nhóm thành module để tiếp tục phân rã WBS.
+
+  ```text
+  Module 1: Quản lý thu phí.
+  - Tạo và cập nhật khoản thu.
+  - Ghi nhận đóng phí.
+  - Thống kê đã thu, chưa thu.
+
+  Module 2: Quản lý người dùng.
+  - Tạo và khóa tài khoản.
+  - Đăng nhập, đăng xuất.
+  - Phân quyền.
+
+  Module 3: Quản lý hộ gia đình.
+  - Thêm, sửa, tra cứu hộ gia đình.
+  - Quản lý nhân khẩu thuộc hộ.
+  - Ghi nhận thay đổi thông tin.
+
+  Ngoài phạm vi phiên bản này:
+  - Ứng dụng di động.
+  - Thanh toán ngân hàng trực tuyến.
+  ```
+
+- **'Ngân sách':** giới hạn tiền dùng cho dự án và cách dự kiến phân bổ — Ước tính từ khối lượng công việc, nguồn lực, chi phí triển khai và dự phòng; kiểm tra tổng không vượt mức được cấp.
+
+  ```text
+  Phát triển phần mềm:               60.000.000 đồng
+  Kiểm thử và nghiệm thu:            15.000.000 đồng
+  Quản lý dự án:                     10.000.000 đồng
+  Tài liệu, triển khai, hướng dẫn:    10.000.000 đồng
+  Dự phòng:                          5.000.000 đồng
+
+  Tổng:                            100.000.000 đồng
+
+  Nguyên tắc:
+  - Dự phòng đã nằm trong tổng ngân sách.
+  - Khi sử dụng dự phòng phải cập nhật số tiền còn lại.
+  ```
+
+- **'Lịch trình và các mốc chính':** các thời điểm cam kết ở mức tổng quát — Chọn theo thời hạn khách hàng yêu cầu và khả năng thực hiện; lịch Gantt phía sau phải đáp ứng những mốc này.
+
+  ```text
+  Bắt đầu:                         04/01/2027
+  Hoàn thành yêu cầu:               08/01/2027
+  Hoàn thành thiết kế:              15/01/2027
+  Hoàn thành tích hợp:              12/02/2027
+  Hoàn thành nghiệm thu thử:        05/03/2027
+  Hoàn thành nghiệm thu chính thức: 19/03/2027
+  Hoàn thành bàn giao:              26/03/2027
+  ```
+
+- **'Rủi ro sơ bộ':** các sự kiện chưa chắc xảy ra nhưng có thể ảnh hưởng mục tiêu — Chọn những rủi ro lớn có thể nhận biết ngay lúc khởi tạo; sau đó phát triển thành bảng quản lý rủi ro.
+
+  ```text
+  R01: Khách hàng bổ sung quy tắc thu phí sau khi chốt yêu cầu.
+  R02: Một lập trình viên không thể tiếp tục tham gia.
+  R03: Khách hàng chậm phản hồi khi nghiệm thu.
+  R04: Phần mềm cài đặt không thành công trên máy đích.
+  ```
+
+- **'Giả định':** điều nhóm tạm xem là đúng để lập kế hoạch nhưng vẫn cần kiểm chứng — Chọn những điều kiện ảnh hưởng đến ước tính; mỗi giả định quan trọng cần có người xác nhận.
+
+  ```text
+  GD01: Khách hàng cung cấp biểu mẫu thu phí trước 06/01/2027.
+  GD02: Huy và Lan tham gia theo mức nguồn lực đã thống nhất.
+  GD03: Người dùng tham gia thử nghiệm trong tuần 01–05/03/2027.
+  GD04: Phạm vi ban đầu được xác nhận trước khi lập trình.
+
+  Nếu có yêu cầu thay đổi:
+  - Đánh giá lại thời gian, chi phí và phạm vi trước khi duyệt.
+  ```
+
+- **'Ràng buộc':** giới hạn bắt buộc phải tuân thủ — Lấy từ ngân sách, hợp đồng, chính sách tổ chức và điều kiện kỹ thuật đã xác nhận.
+
+  ```text
+  RB01: Tổng chi phí không vượt 100.000.000 đồng.
+  RB02: Hoàn thành bàn giao chậm nhất ngày 26/03/2027.
+  RB03: Nhóm thực hiện ban đầu gồm 4 người.
+  RB04: Phần mềm phải chạy trên cấu hình máy đích
+        được hai bên xác nhận trong giai đoạn yêu cầu.
+  ```
+
+- **'Yếu tố phụ thuộc bên ngoài':** điều kiện do bên ngoài nhóm kiểm soát nhưng cần có để nhóm thực hiện công việc — Xác định bên cung cấp, nội dung cần cung cấp và thời điểm cần nhận.
+
+  ```text
+  PT01:
+  - Cần: danh mục phí và cách tính.
+  - Bên cung cấp: kế toán chung cư.
+  - Hạn cần nhận: 06/01/2027.
+
+  PT02:
+  - Cần: máy tính đích và quyền cài đặt.
+  - Bên cung cấp: bộ phận kỹ thuật tòa nhà.
+  - Hạn cần nhận: trước đợt kiểm tra triển khai.
+
+  PT03:
+  - Cần: đại diện khách hàng tham gia nghiệm thu.
+  - Bên cung cấp: Ban quản trị.
+  - Thời điểm: theo lịch nghiệm thu đã thống nhất.
+  ```
+
+- **'Chiến lược truyền thông':** quy định ai trao đổi với ai, bằng kênh nào, khi nào và về nội dung gì — Chọn theo nhu cầu phối hợp và ra quyết định của từng bên.
+
+  ```text
+  Họp nhóm:
+  - Đầu giờ mỗi ngày làm việc.
+  - Nội dung: việc đã làm, việc sắp làm, trở ngại.
+
+  Báo cáo tiến độ:
+  - Nam gửi nhà tài trợ vào chiều thứ Sáu.
+  - Kênh: email.
+  - Nội dung: tiến độ, chi phí, rủi ro, quyết định cần xử lý.
+
+  Đánh giá theo mốc:
+  - Có khách hàng và nhóm dự án.
+  - Lập biên bản xác nhận kết quả, việc còn lại và người xử lý.
+  ```
+
+- **'Phê duyệt':** thông tin xác nhận các bên có thẩm quyền đã chấp thuận tuyên ngôn — Điền đúng người ký và ngày ký thực tế; để trống chữ ký khi tài liệu mới là bản nháp.
+
+  ```text
+  Nhà tài trợ:
+  - Họ tên: Minh.
+  - Chữ ký: chưa ký.
+  - Ngày: chưa xác nhận.
+
+  Đại diện cơ quan tài trợ:
+  - Họ tên: bổ sung người có thẩm quyền.
+  - Chữ ký: chưa ký.
+  - Ngày: chưa xác nhận.
+
+  Người quản lý dự án:
+  - Họ tên: Nam.
+  - Chữ ký: chưa ký.
+  - Ngày: chưa xác nhận.
+  ```
+
+- **'Ghi chú':** thông tin làm rõ cách hiểu hoặc nội dung chưa được chốt — Chỉ ghi điều có ích cho người đọc; nội dung ảnh hưởng cam kết phải được cập nhật vào mục chính tương ứng.
+
+  ```text
+  - Các thông tin trong bản học tập là dữ liệu giả định.
+  - Cấu hình máy đích cần xác nhận khi khảo sát.
+  - Thời gian bảo trì sau bàn giao cần thỏa thuận riêng.
+  ```
+
+**Mối liên hệ trong sản phẩm:** bối cảnh giải thích vì sao cần dự án; mục đích xác định nhu cầu; mục tiêu đưa ra cách đánh giá; phạm vi và sản phẩm bàn giao xác định việc cần làm; ngân sách, lịch trình và ràng buộc giới hạn cách thực hiện.
 
 </details>
 
 <details>
-<summary>-sản phẩm 'Cấu trúc phân cấp công việc — WBS'</summary>
+<summary>-sản phẩm 'Cấu trúc phân cấp công việc theo sản phẩm bàn giao — Deliverable-based WBS'</summary>
 
-**Sản phẩm này là gì?** WBS chia phạm vi dự án thành những phần nhỏ hơn để biết cần hoàn thành những gì. Bạn có thể trình bày bằng sơ đồ cây hoặc bảng phân cấp.
+WBS theo sản phẩm bàn giao phân rã kết quả lớn thành các kết quả nhỏ hơn để có thể giao việc và kiểm soát hoàn thành.
 
-Tài liệu minh họa ba cách tổ chức: **theo sản phẩm bàn giao, theo quy trình Waterfall và theo quy trình Scrum**. Đây là các cách nhìn khác nhau; không mặc định phải làm ba WBS độc lập cho cùng một dự án.
+Tài liệu minh họa phần mềm ở mức 0, các module ở mức 1 và các tính năng ở các mức tiếp theo. Khi lập WBS cho **toàn bộ dự án**, bạn còn cần bao quát tài liệu, triển khai và quản lý dự án trong phạm vi đã cam kết.
 
-**Các thuộc tính cần tạo**
+**Đầu vào cần chuẩn bị:** phạm vi sản phẩm, phạm vi công việc, danh sách bàn giao và tiêu chí nghiệm thu trong tuyên ngôn.
 
-- **“Nút gốc”**: Là phần việc tổng thể mà sơ đồ đại diện — phải thống nhất với phạm vi được phân rã — điền: **“Dự án phần mềm quản lý và thu phí Blue Moon”** nếu bao quát toàn dự án, hoặc **“Phần mềm quản lý và thu phí Blue Moon”** nếu chỉ phân rã sản phẩm phần mềm.
+- **'Tên nút gốc':** tên đối tượng bao trùm toàn bộ WBS — Chọn rõ đang phân rã riêng phần mềm hay toàn bộ dự án để áp dụng quy tắc 100% đúng phạm vi.
 
-- **“Cách phân rã”**: Là nguyên tắc dùng để chia một nút cha thành các nút con — quyết định tên gọi và ý nghĩa các cấp — chọn **theo sản phẩm bàn giao** để nhìn rõ module, tính năng; chọn **theo quy trình** để nhìn rõ các nhóm hoạt động tạo ra sản phẩm.
+  ```text
+  Mã: 0
+  Tên: Dự án phần mềm quản lý và thu phí chung cư Blue Moon.
 
-- **“Mã WBS”**: Là mã thể hiện vị trí trong cây — liên hệ với mã nút cha và được dùng để truy vết sang Gantt, bảng rủi ro — điền theo dạng **1 → 1.1 → 1.1.1**. Ví dụ: **1. Quản lý thu phí; 1.1. Tạo khoản thu**.
+  Phạm vi WBS này:
+  - Toàn bộ công việc của dự án đã được phê duyệt.
+  ```
 
-- **“Tên nút hoặc tên công việc”**: Là tên phần phạm vi tại vị trí đó — phải cụ thể hơn nút cha và không trùng ý nghĩa với nút anh em — điền **“Tạo khoản thu”**, **“Thu phí”**, **“Thống kê các khoản đóng góp”** thay vì những tên khó kiểm tra như “Xử lý phần mềm”.
+- **'Mã WBS':** mã định danh thể hiện vị trí một phần tử trong cấu trúc — Đặt mã theo cấp cha–con; dùng mã này để nối công việc với lịch trình và rủi ro.
 
-- **“Nút cha”**: Là phần phạm vi chứa nút hiện tại — giúp kiểm tra công việc thuộc nhóm nào — ví dụ: **“Tạo khoản thu” có nút cha là “Quản lý thu phí”**. Trong bảng có thể tạo cột **Mã cha = 1** cho dòng có mã **1.1**.
+  ```text
+  1       Module quản lý thu phí
+  1.1     Chức năng tạo và cập nhật khoản thu
+  1.2     Chức năng ghi nhận đóng phí
+  1.3     Báo cáo đã thu và chưa thu
+  ```
 
-- **“Cấp phân rã”**: Là độ sâu của nút trong cây — được suy ra từ quan hệ cha con — điền **cấp 0: toàn bộ; cấp 1: module; cấp 2: tính năng** đối với ví dụ theo sản phẩm trong PDF. Các cấp không tự biểu thị thời gian thực hiện.
+- **'Tên sản phẩm hoặc thành phần':** tên đầu ra mà phần tử WBS cần tạo — Lấy từ danh sách bàn giao và các chức năng đã xác nhận; ưu tiên tên thể hiện kết quả cụ thể.
 
-- **“Gói công việc”**: Là phần việc ở mức thấp nhất của WBS đang sử dụng, đủ rõ để quản lý — liên hệ với việc ước lượng và giao trách nhiệm — chọn **“Tạo khoản thu”** làm gói nếu nhóm có thể xác định rõ đầu ra, công sức và người chịu trách nhiệm. Nếu quá lớn, tiếp tục chia hoặc lập các hoạt động thực hiện chi tiết.
+  ```text
+  Mã: 1.2
+  Tên: Chức năng ghi nhận đóng phí.
 
-- **“Đầu ra của gói công việc”**: Là kết quả phải có khi gói hoàn thành — lấy từ yêu cầu hoặc sản phẩm bàn giao trong tuyên ngôn — điền: **“Chức năng tạo khoản thu có giao diện, lưu dữ liệu và kiểm tra dữ liệu hợp lệ”**. Thuộc tính này có thể ghi trong bảng mô tả WBS để sơ đồ cây không quá dài.
+  Đầu ra:
+  - Giao diện ghi nhận đóng phí.
+  - Dữ liệu giao dịch được lưu.
+  - Kết quả cập nhật vào báo cáo thu phí.
+  ```
 
-- **“Điều kiện hoàn thành”**: Là căn cứ xác nhận đầu ra đã đạt — liên hệ với mục tiêu và kiểm thử — điền: **“Tạo được khoản thu hợp lệ; dữ liệu lưu đúng; dữ liệu thiếu hoặc sai bị từ chối; các ca kiểm thử đã thống nhất đều đạt”**.
+- **'Cấp phân rã và phần tử cha':** vị trí của thành phần trong hệ thống lớn hơn — Xác định thành phần đó thuộc sản phẩm nào; tránh đặt một chức năng vào nhiều nhánh rồi tính công việc hai lần.
 
-- **“Người chịu trách nhiệm”**: Là người theo dõi và chịu trách nhiệm về đầu ra của gói — lấy từ đội ngũ trong tuyên ngôn, sau đó dùng khi phân công Gantt — điền: **“Chi phụ trách hoàn thành chức năng; Dũng thực hiện kiểm thử”**. Một gói có thể cần nhiều người phối hợp.
+  ```text
+  Phần tử: 1.2 — Chức năng ghi nhận đóng phí.
+  Cấp: 2.
+  Phần tử cha: 1 — Module quản lý thu phí.
 
-- **“Hoạt động thực hiện gói công việc”**: Là các bước cần tiến hành để tạo đầu ra — được dùng làm đầu vào lập lịch Gantt khi cần quản lý chi tiết — với gói **Tạo khoản thu**, điền: **làm rõ yêu cầu → thiết kế → lập trình → kiểm thử**. Không mặc định mỗi bước phải xuất hiện trên sơ đồ WBS nếu chúng đã được quản lý trong bảng hoạt động riêng.
+  Khi 1.1, 1.2 và 1.3 đều hoàn thành,
+  module 1 mới đáp ứng đầy đủ phạm vi đã phân rã.
+  ```
 
-- **“Quy tắc 100%”**: Là yêu cầu các phần con cộng lại bao quát toàn bộ phạm vi của phần cha, đồng thời tránh tính trùng công việc — kiểm tra dựa trên phạm vi và sản phẩm bàn giao — nếu nút gốc là toàn dự án, cần bao quát cả **quản lý dự án, tài liệu, kiểm thử, triển khai và bàn giao**, chứ không chỉ có ba module chức năng.
+- **'Gói công việc':** phần tử ở mức thấp nhất được quản lý trong WBS — Tiếp tục chia nhỏ đến khi có thể ước tính, giao người chịu trách nhiệm và kiểm tra kết quả. Gói công việc vẫn có thể chứa nhiều hoạt động thực hiện.
 
-**Ví dụ cách phân rã theo sản phẩm bàn giao**
+  ```text
+  Mã gói: 1.2
+  Tên gói: Chức năng ghi nhận đóng phí.
+  Người chịu trách nhiệm: Huy.
 
-Bảng dưới đây minh họa phần phạm vi chức năng của phần mềm:
+  Phạm vi:
+  - Chọn hộ gia đình.
+  - Chọn khoản thu.
+  - Nhập số tiền và ngày đóng.
+  - Lưu giao dịch.
+  - Cập nhật kết quả thống kê.
 
-| Mã WBS | Mã cha | Tên nút | Đầu ra cần có |
-|---|---|---|---|
-| 0 | — | Phần mềm Blue Moon | Phần mềm gồm ba module |
-| 1 | 0 | Quản lý thu phí | Nhóm chức năng thu phí |
-| 1.1 | 1 | Tạo khoản thu | Tạo và lưu khoản thu |
-| 1.2 | 1 | Thu phí | Ghi nhận việc đóng phí |
-| 1.3 | 1 | Thống kê các khoản đóng góp | Tổng hợp số tiền đã đóng |
-| 2 | 0 | Quản lý người dùng | Nhóm chức năng tài khoản |
-| 2.1 | 2 | Đăng ký tài khoản | Tạo tài khoản theo quy định |
-| 3 | 0 | Quản lý hộ gia đình | Nhóm chức năng hộ dân |
-| 3.1 | 3 | Quản lý thông tin hộ | Tạo, xem và cập nhật hồ sơ hộ |
+  Không thuộc gói:
+  - Tích hợp thanh toán ngân hàng.
+  ```
 
-Đây là **bảng minh họa chưa phân rã hết**, không phải WBS hoàn chỉnh của toàn dự án.
+- **'Tiêu chí hoàn thành':** điều kiện dùng để kết luận đầu ra của gói công việc đã đạt — Lấy từ yêu cầu được duyệt và tình huống kiểm thử; viết sao cho có thể quan sát hoặc đối chiếu.
 
-**Ví dụ cách phân rã theo quy trình Waterfall**
+  ```text
+  Gói 1.2 hoàn thành khi:
+  - Lưu được giao dịch có dữ liệu hợp lệ.
+  - Từ chối số tiền bằng 0 hoặc âm theo quy tắc đã duyệt.
+  - Giao dịch liên kết đúng hộ và khoản thu.
+  - Người không có quyền không thực hiện được thao tác.
+  - Báo cáo phản ánh đúng số tiền vừa ghi nhận.
+  - Các tình huống kiểm thử của gói được thực hiện đạt.
+  ```
 
-Theo hướng minh họa trong PDF, bạn bắt đầu bằng các nhánh **quản lý dự án, xây dựng phần mềm, chăm sóc hỗ trợ, vận hành phần mềm**.
+- **'Cấu trúc WBS đầy đủ và quy tắc 100%':** danh sách phân cấp bao quát toàn bộ phạm vi đã chọn — Đối chiếu từng sản phẩm bàn giao với WBS; tổng các phần tử con phải bao quát phần tử cha và tránh chồng lặp.
 
-Trong nhánh xây dựng phần mềm, chia tiếp thành **phân tích, thiết kế, cài đặt và kiểm thử**. Nhánh thiết kế có thể chia thành **thiết kế chức năng, giao diện, dữ liệu, rà soát và phân quyền**.
+  ```text
+  0. Dự án phần mềm Blue Moon
 
-Ví dụ một đường dẫn trong cây: **Xây dựng phần mềm → Thiết kế → Thiết kế dữ liệu → Module quản lý thu phí → Tạo khoản thu**.
+      1. Module quản lý thu phí
+          1.1. Chức năng tạo và cập nhật khoản thu
+          1.2. Chức năng ghi nhận đóng phí
+          1.3. Báo cáo đã thu và chưa thu
 
-Nhánh này mô tả **phần thiết kế dữ liệu** của tính năng tạo khoản thu. Công việc lập trình và kiểm thử tính năng đó phải được quản lý ở các nhánh tương ứng, tránh hiểu rằng thiết kế xong là hoàn thành toàn bộ tính năng.
+      2. Module quản lý người dùng
+          2.1. Chức năng tạo và khóa tài khoản
+          2.2. Chức năng đăng nhập, đăng xuất
+          2.3. Chức năng phân quyền
 
-**Ví dụ cách phân rã theo quy trình Scrum**
+      3. Module quản lý hộ gia đình
+          3.1. Chức năng quản lý thông tin hộ
+          3.2. Chức năng quản lý nhân khẩu
+          3.3. Chức năng ghi nhận thay đổi thông tin
 
-Theo hình minh họa của PDF: **Xây dựng phần mềm → Quản lý thu phí → Thiết lập yêu cầu, Lập kế hoạch phân đoạn, Phát triển, Vận hành**.
+      4. Bộ tài liệu
+          4.1. Đặc tả yêu cầu
+          4.2. Phân tích và thiết kế
+          4.3. Tài liệu và kết quả kiểm thử
+          4.4. Hướng dẫn cài đặt, sử dụng
+          4.5. Tài liệu cấu trúc mã nguồn và API nếu có
 
-Trong nhánh **Phát triển**, chia tiếp thành **Tạo khoản thu, Thu phí, Thống kê các khoản đóng góp**.
+      5. Bộ sản phẩm phát hành và bàn giao
+          5.1. Bộ cài đã tích hợp và kiểm tra
+          5.2. Mã nguồn phiên bản bàn giao
+          5.3. Hồ sơ quyền sử dụng theo thỏa thuận
+          5.4. Kết quả hướng dẫn người dùng
+          5.5. Biên bản nghiệm thu, bàn giao
 
-Đây là cách tài liệu minh họa WBS khi tổ chức theo Scrum; bản thân WBS chưa thể hiện đầy đủ Sprint, Product Backlog hay lịch thực hiện từng Sprint.
+      6. Hồ sơ quản lý dự án
+          6.1. Kế hoạch dự án được duyệt
+          6.2. Báo cáo theo dõi và kiểm soát
+          6.3. Hồ sơ thay đổi và quyết định
+          6.4. Báo cáo kết thúc dự án
+  ```
 
-**Ví dụ liên kết đầy đủ giữa các thuộc tính**
+  Trong cấu trúc này, việc lập trình và kiểm tra chức năng nằm trong các gói module; nhánh 5.1 bao gồm phần tích hợp, đóng gói và kiểm tra ở mức toàn hệ thống. Khi chi tiết hóa, cần ghi rõ ranh giới để tránh tính trùng.
 
-Tuyên ngôn xác định phần mềm phải quản lý thu phí. Bạn tạo nút **1. Quản lý thu phí**, rồi chia thành các nút **1.1, 1.2, 1.3**.
-
-Gói **1.1. Tạo khoản thu** có đầu ra là chức năng tạo khoản thu, người chịu trách nhiệm là Chi và điều kiện hoàn thành là các ca kiểm thử đã thống nhất đều đạt.
-
-Để lập lịch, nhóm chuyển gói này thành các hoạt động làm rõ yêu cầu, thiết kế, lập trình và kiểm thử. Các hoạt động cùng tham chiếu mã **WBS 1.1**, giúp biết chúng đang phục vụ sản phẩm nào.
-
-**Cách kiểm tra sản phẩm:** Đọc từ dưới lên: các đầu ra cấp con có đủ để hoàn thành cấp cha không? Có đầu ra trong tuyên ngôn chưa được giao cho nhánh nào không? Có công việc đang bị tính hai lần không?
-
-</details>
-
-<details>
-<summary>-sản phẩm 'Lịch trình dự án — Biểu đồ Gantt'</summary>
-
-**Sản phẩm này là gì?** Đây là kế hoạch thể hiện công việc diễn ra khi nào, kéo dài bao lâu, phụ thuộc vào công việc nào và do ai thực hiện.
-
-PDF nêu Gantt trong yêu cầu Bài 4.2 nhưng không hướng dẫn chi tiết các trường. Những thuộc tính dưới đây là phần triển khai bổ sung để bạn có thể tạo lịch từ WBS bằng bảng tính hoặc công cụ quản lý dự án.
-
-**Các thuộc tính cần tạo**
-
-- **“Lịch làm việc”**: Là quy định ngày và giờ được tính để thực hiện công việc — quyết định cách chuyển thời lượng thành ngày bắt đầu, kết thúc — chọn rõ **ngày lịch** hoặc **ngày làm việc**, số giờ/ngày và ngày nghỉ. Ví dụ bên dưới dùng **ngày lịch để minh họa**; điều này không có nghĩa nhân viên làm việc tất cả các ngày.
-
-- **“Mã hoạt động”**: Là mã riêng cho từng dòng lịch — dùng khi khai báo quan hệ phụ thuộc — điền **A01, A02, A03…**. Mã hoạt động có thể khác mã WBS vì một gói WBS có nhiều hoạt động.
-
-- **“Mã WBS tham chiếu”**: Là mã chỉ gói công việc mà hoạt động phục vụ — tạo liên kết giữa lịch và phạm vi — ví dụ hoạt động **“Lập trình tạo khoản thu”** tham chiếu **WBS 1.1** trong WBS theo sản phẩm nêu trên.
-
-- **“Tên hoạt động”**: Là hành động cụ thể cần thực hiện — lấy từ việc triển khai các gói WBS — điền **“Thiết kế dữ liệu khoản thu”**, **“Lập trình tạo khoản thu”**, **“Kiểm thử tạo khoản thu”**.
-
-- **“Công việc tiền nhiệm”**: Là hoạt động cần đáp ứng điều kiện trước khi hoạt động hiện tại diễn ra — lấy từ quy trình và nhu cầu sử dụng đầu ra — điền **“Kiểm thử tạo khoản thu có tiền nhiệm là Lập trình tạo khoản thu”**.
-
-- **“Kiểu phụ thuộc”**: Là cách hai hoạt động liên kết về thời gian — kết hợp với tiền nhiệm để xác định lịch — ví dụ **FS, Finish-to-Start: hoạt động trước kết thúc thì hoạt động sau mới được bắt đầu**. Có thể dùng SS khi hai hoạt động được phép bắt đầu song song, nhưng phải có lý do thực tế.
-
-- **“Thời lượng”**: Là khoảng thời gian hoạt động diễn ra theo lịch đã chọn — đầu vào gồm khối lượng việc, năng suất, nhân lực và kinh nghiệm — điền **“3 ngày làm việc”** hoặc **“3 ngày lịch”**, không ghi “3 ngày” khi chưa xác định cách tính.
-
-- **“Khối lượng công sức”**: Là lượng lao động cần thiết, thường đo bằng giờ công hoặc ngày công — liên hệ với thời lượng và số người có thể tham gia — ví dụ **16 giờ công** có thể được bố trí trong hai ngày nếu một người dành đủ tám giờ/ngày. Nếu người đó chỉ dành bốn giờ/ngày, thời lượng dự kiến tăng lên bốn ngày.
-
-- **“Ngày bắt đầu”**: Là thời điểm dự kiến khởi động hoạt động — phụ thuộc ngày sẵn sàng của tiền nhiệm, lịch làm việc và người thực hiện — ví dụ: **“Bắt đầu kiểm thử sau khi đã có bản dựng phần mềm đủ điều kiện kiểm thử”**.
-
-- **“Ngày kết thúc”**: Là thời điểm dự kiến hoàn thành hoạt động — được tính từ ngày bắt đầu và thời lượng theo lịch — với cách tính ngày lịch bao gồm cả hai đầu, hoạt động bắt đầu **01/10** và kéo dài **14 ngày** sẽ kết thúc **14/10**.
-
-- **“Người thực hiện”**: Là người được bố trí làm hoạt động — lấy từ đội dự án và trách nhiệm của gói WBS — điền **Chi** cho hoạt động lập trình, **Dũng** cho kiểm thử. Cần kiểm tra một người có đang được giao nhiều việc toàn thời gian trùng nhau không.
-
-- **“Mốc thời gian — Milestone”**: Là điểm đánh dấu một sự kiện quan trọng — lấy từ tuyên ngôn và điều kiện nghiệm thu — điền **“Bàn giao bản dùng thử — 30/11/2023”**. Trong lịch, mốc thường có thời lượng bằng **0**; công việc chuẩn bị và thực hiện nghiệm thu phải được lập lịch riêng nếu cần thời gian.
-
-- **“Phần trăm hoàn thành”**: Là mức tiến triển được cập nhật tại thời điểm báo cáo — phải có căn cứ từ công việc hoặc đầu ra đã hoàn thành — điền **0% khi chưa làm, 100% khi đạt điều kiện hoàn thành**. Không tự coi đã trôi qua nửa thời gian là hoàn thành 50%.
-
-- **“Thanh Gantt”**: Là phần hiển thị khoảng bắt đầu đến kết thúc trên trục thời gian — được tạo từ dữ liệu ngày tháng của từng hoạt động — mỗi dòng công việc có một thanh; mốc thường được thể hiện bằng một ký hiệu tại đúng ngày.
-
-**Ví dụ lịch tổng quát cho bài toán Blue Moon**
-
-Bảng này dùng **ngày lịch** và tổng hợp công việc theo giai đoạn. Khi quản lý chi tiết, bạn phân rã tiếp thành hoạt động của từng gói WBS.
-
-| Mã | Hoạt động hoặc mốc | Bắt đầu | Kết thúc | Thời lượng | Tiền nhiệm | Phụ trách |
-|---|---|---|---|---:|---|---|
-| A01 | Khảo sát và xác nhận yêu cầu | 01/10/2023 | 14/10/2023 | 14 ngày | — | Bình |
-| A02 | Phân tích và thiết kế | 15/10/2023 | 28/10/2023 | 14 ngày | A01, FS | Bình, Chi |
-| A03 | Lập trình ba module | 29/10/2023 | 18/11/2023 | 21 ngày | A02, FS | Chi |
-| A04 | Tích hợp, kiểm thử và chuẩn bị bản dùng thử | 19/11/2023 | 29/11/2023 | 11 ngày | A03, FS | Chi, Dũng |
-| M01 | Bàn giao bản dùng thử | 30/11/2023 | 30/11/2023 | 0 | A04, FS | An |
-| A05 | Xử lý phản hồi và hoàn thiện bản chính thức | 01/12/2023 | 14/12/2023 | 14 ngày | M01, FS | Bình, Chi, Dũng |
-| M02 | Bàn giao phiên bản chính thức | 15/12/2023 | 15/12/2023 | 0 | A05, FS | An |
-| A06 | Hoàn tất chuyển giao và đóng dự án | 16/12/2023 | 30/12/2023 | 15 ngày | M02, FS | An và nhóm |
-| M03 | Hoàn thành dự án | 30/12/2023 | 30/12/2023 | 0 | A06, FS | An |
-
-Các hoạt động nghiệm thu, đào tạo và hoàn thiện tài liệu cần được phân bổ rõ bên trong những giai đoạn phù hợp; không thể chỉ ghi mốc bàn giao rồi mặc định mọi việc chuẩn bị đã được thực hiện.
-
-**Ví dụ liên kết đầy đủ giữa các thuộc tính**
-
-Gói WBS **1.1. Tạo khoản thu** tạo ra ba hoạt động liên tiếp:
-
-| Mã | Hoạt động | WBS tham chiếu | Công sức minh họa | Người thực hiện | Tiền nhiệm |
-|---|---|---|---:|---|---|
-| T01 | Thiết kế chức năng tạo khoản thu | 1.1 | 8 giờ | Bình | Yêu cầu đã xác nhận |
-| T02 | Lập trình chức năng tạo khoản thu | 1.1 | 16 giờ | Chi | T01, FS |
-| T03 | Kiểm thử chức năng tạo khoản thu | 1.1 | 8 giờ | Dũng | T02, FS |
-
-Từ công sức và mức sẵn sàng của từng người, bạn xác định thời lượng, rồi tính ngày bắt đầu và kết thúc.
-
-Nếu T02 chậm, T03 có thể phải lùi. Nếu việc này làm chậm tích hợp hoặc bản dùng thử, mốc 30/11 bị ảnh hưởng. Khi đó phải đối chiếu ràng buộc trong tuyên ngôn và cập nhật rủi ro, thay vì chỉ sửa ngày trên biểu đồ.
-
-**Cách kiểm tra sản phẩm:** Mọi hoạt động phải truy được về phạm vi; các quan hệ phụ thuộc phải có lý do; người thực hiện phải có thời gian; các mốc phải phù hợp với tuyên ngôn dự án.
+**Mối liên hệ với sản phẩm trước:** tuyên ngôn xác định cần bàn giao những gì; WBS biến danh sách đó thành các phần có thể giao việc. Nếu thêm “ứng dụng di động” vào WBS, bạn phải xử lý thay đổi phạm vi vì tuyên ngôn hiện tại chưa bao gồm sản phẩm này.
 
 </details>
 
 <details>
-<summary>-sản phẩm 'Bảng kế hoạch quản lý rủi ro dự án'</summary>
+<summary>-sản phẩm 'Cấu trúc phân cấp công việc theo quy trình — Process-based WBS'</summary>
 
-**Sản phẩm này là gì?** Đây là bảng ghi nhận điều gì có thể xảy ra, khả năng xảy ra, hậu quả và hành động cần thực hiện để giảm ảnh hưởng.
+WBS theo quy trình tổ chức công việc theo các pha hoặc cách vận hành dự án. Tài liệu đưa ra minh họa theo **Waterfall** và **Scrum**.
 
-**Điểm cần xử lý trước khi điền:** PDF có sự không thống nhất trong cách đánh giá:
+Đây là **cách nhìn khác của cùng một phạm vi**. Khi lập kế hoạch chính thức, chọn cấu trúc phù hợp; nếu giữ nhiều cách nhìn thì phải có ánh xạ để tránh cộng trùng khối lượng.
 
-- Bảng 4-1 ghi một số điểm theo tích xác suất và tác động, chẳng hạn **2 × 2 = 4**.
-- Ma trận cuối tài liệu lại quy định **xác suất 2, tác động 2 → mức 3**.
-- Đoạn diễn giải năm mức ở trang 8 bị lặp nhãn “Mức 4”, “Mức 5”.
+**Đầu vào cần chuẩn bị:** tuyên ngôn, danh sách bàn giao, yêu cầu nghiệp vụ và quy trình phát triển được lựa chọn.
 
-Để ví dụ nhất quán, phần dưới **tra mức rủi ro bằng ma trận cuối PDF**, không lấy tích làm mức rủi ro. Nếu cần giữ điểm tích để tham khảo, phải tạo cột riêng và đặt tên rõ.
+- **'Quy trình phát triển được chọn':** cách tổ chức quá trình tạo phần mềm — Chọn dựa trên độ rõ của yêu cầu, khả năng khách hàng phản hồi và cách nhóm làm việc; ghi lý do để người đọc hiểu cấu trúc WBS.
 
-**Các thuộc tính cần tạo**
+  ```text
+  Quy trình dùng trong kế hoạch mẫu: Waterfall.
 
-- **“Mã hoặc số thứ tự rủi ro”**: Là định danh riêng của từng rủi ro — dùng để liên kết với công việc và theo dõi cập nhật — điền **R01, R02, R03…**.
+  Lý do giả định:
+  - Ba module chính đã được xác định.
+  - Khách hàng có thể xác nhận quy tắc thu phí từ đầu.
+  - Bài học cần thể hiện rõ yêu cầu → thiết kế → lập trình → kiểm thử.
 
-- **“Mô tả rủi ro”**: Là phát biểu về một sự kiện chưa chắc xảy ra và hậu quả có thể có — lấy đầu vào từ phạm vi, giả định, nhân lực, tiến độ và phụ thuộc bên ngoài — điền theo mẫu **“Nếu… thì… dẫn đến…”**. Ví dụ: **“Nếu khách hàng bổ sung quy tắc tính phí sau khi lập trình, nhóm phải sửa thiết kế và mã nguồn, có thể chậm bàn giao”**.
+  Thay đổi phát sinh vẫn phải được đánh giá và phê duyệt.
+  ```
 
-- **“Phạm vi hoặc công việc bị ảnh hưởng”**: Là nơi rủi ro tác động — tham chiếu module, mã WBS hoặc mã hoạt động Gantt — điền **“Module thu phí; WBS 1.1; hoạt động lập trình và kiểm thử tạo khoản thu”**. Đây là trường bổ sung giúp bảng rủi ro liên kết với kế hoạch.
+- **'Các pha hoặc nhóm công việc cấp cao':** các nhóm hoạt động lớn bao quát quá trình triển khai — Lấy từ quy trình đã chọn và phạm vi công việc; bổ sung quản lý, tài liệu, triển khai nếu chúng nằm trong cam kết.
 
-- **“Xác suất”**: Là mức đánh giá khả năng sự kiện xảy ra — dựa vào lịch sử, dấu hiệu hiện tại và đánh giá của nhóm — chọn **Thấp (1), Vừa (2), Cao (3)** theo bảng hướng dẫn. Ví dụ: **Vừa (2)** nếu đã có các lần yêu cầu thay đổi và vẫn còn điểm nghiệp vụ chưa rõ. Các số 1, 2, 3 là điểm thứ bậc, không phải phần trăm xác suất.
+  ```text
+  0. Dự án Blue Moon
+      1. Quản lý dự án
+      2. Khảo sát và đặc tả yêu cầu
+      3. Phân tích và thiết kế
+      4. Phát triển phần mềm
+      5. Tích hợp, kiểm thử và nghiệm thu
+      6. Triển khai, hướng dẫn và bàn giao
+  ```
 
-- **“Tác động”**: Là mức hậu quả nếu rủi ro xảy ra — liên hệ với phạm vi, chất lượng và chi phí — chọn **Thấp (1), Vừa (2), Cao (3)**. Ví dụ: chọn **Cao (3)** nếu ước tính sự kiện làm tăng chi phí trên 10%, phù hợp ngưỡng chi phí mức cao trong PDF.
+- **'Công việc con':** những phần việc cần thực hiện để hoàn thành một pha — Phân rã từ đầu ra của pha; chỉ dừng khi công việc đủ rõ để ước tính và kiểm tra.
 
-- **“Căn cứ đánh giá”**: Là bằng chứng hoặc lý do chọn xác suất và tác động — giúp người khác hiểu vì sao một rủi ro được ưu tiên — điền: **“Quy tắc thu phí chưa được xác nhận; thay đổi dự kiến ảnh hưởng nhiều màn hình và cấu trúc dữ liệu”**. Đây là trường bổ sung, tránh chấm điểm theo cảm giác mà không giải thích.
+  ```text
+  3. Phân tích và thiết kế
+      3.1. Thiết kế chức năng
+      3.2. Thiết kế giao diện
+      3.3. Thiết kế dữ liệu
+          3.3.1. Dữ liệu thu phí
+          3.3.2. Dữ liệu người dùng
+          3.3.3. Dữ liệu hộ gia đình
+      3.4. Thiết kế phân quyền
+      3.5. Rà soát và hoàn thiện thiết kế
+  ```
 
-- **“Mức độ rủi ro”**: Là kết quả kết hợp xác suất và tác động để ưu tiên xử lý — phụ thuộc trực tiếp hai thuộc tính trên — tra ma trận. Ví dụ: **xác suất 2 + tác động 3 → mức 4** theo ô tương ứng.
+- **'Đầu ra của công việc':** kết quả phải có sau khi thực hiện hoạt động — Chọn đầu ra chứng minh được công việc đã hoàn thành; ánh xạ với sản phẩm bàn giao hoặc gói WBS tương ứng.
 
-- **“Hành động ngăn ngừa”**: Là việc thực hiện trước khi rủi ro xảy ra để giảm khả năng hoặc hậu quả — phải xử lý đúng nguyên nhân trong mô tả — điền: **“Xác nhận quy tắc tính phí bằng văn bản; dùng ví dụ dữ liệu để rà soát; thống nhất quy trình tiếp nhận thay đổi”**.
+  ```text
+  Công việc: 3.3.1 — Thiết kế dữ liệu thu phí.
 
-- **“Dấu hiệu kích hoạt”**: Là dấu hiệu cho biết cần đưa rủi ro ra xử lý hoặc chuyển sang phương án ứng phó — liên hệ với cơ chế theo dõi — điền: **“Khách hàng gửi quy tắc tính phí mới sau khi tài liệu thiết kế đã được xác nhận”**. Đây là trường bổ sung.
+  Đầu vào:
+  - Quy tắc thu phí đã xác nhận.
+  - Các biểu mẫu khách hàng cung cấp.
 
-- **“Phương án ứng phó khi xảy ra”**: Là việc làm khi sự kiện đã xuất hiện — phải dựa vào tác động thực tế và ràng buộc dự án — điền: **“Đánh giá phần việc phát sinh; xác định ảnh hưởng chi phí, lịch trình; trình người có thẩm quyền quyết định trước khi cập nhật kế hoạch”**. Đây là trường bổ sung, khác với hành động ngăn ngừa.
+  Đầu ra:
+  - Mô hình dữ liệu thu phí.
+  - Mô tả trường dữ liệu và quan hệ.
+  - Quy tắc kiểm tra dữ liệu.
 
-- **“Người phụ trách rủi ro”**: Là người theo dõi và điều phối xử lý — lấy từ đội dự án và trách nhiệm liên quan — điền **An** cho rủi ro thay đổi phạm vi, **Chi** cho rủi ro kỹ thuật. Đây là trường bổ sung.
+  Liên kết:
+  - Là một phần của tài liệu phân tích và thiết kế.
+  - Hỗ trợ phát triển module quản lý thu phí.
+  ```
 
-- **“Trạng thái và ngày rà soát”**: Là thông tin cho biết rủi ro còn cần theo dõi hay đã được xử lý — liên hệ với báo cáo tiến độ và cuộc họp — điền **“Đang theo dõi — rà soát hằng tuần”**, hoặc **“Đã xảy ra — đang xử lý”**. Đây là trường bổ sung.
+- **'Người phụ trách và tiêu chí hoàn thành':** người điều phối kết quả và điều kiện để chuyển sang bước tiếp theo — Chọn theo chuyên môn, đồng thời xác định người rà soát để tránh tự kết luận hoàn thành.
 
-**Thang xác suất để điền**
+  ```text
+  Công việc: 3.3.1 — Thiết kế dữ liệu thu phí.
+  Người thực hiện: Huy.
+  Người rà soát: Lan và Nam.
 
-| Điểm | Mức | Cách hiểu để thực hành |
-|---:|---|---|
-| 1 | Thấp | Hiếm xảy ra hoặc ít dấu hiệu cho thấy sẽ xảy ra |
-| 2 | Vừa | Thỉnh thoảng xảy ra hoặc có căn cứ hợp lý để dự kiến |
-| 3 | Cao | Thường xuyên xảy ra hoặc hiện có nhiều dấu hiệu đáng chú ý |
+  Hoàn thành khi:
+  - Dữ liệu hỗ trợ đủ 5 loại phí đã xác nhận.
+  - Có quan hệ giữa hộ gia đình, khoản thu và giao dịch.
+  - Các nhận xét rà soát đã được xử lý.
+  - Thiết kế được xác nhận để lập trình.
+  ```
 
-**Ma trận xác định mức rủi ro theo cuối PDF**
+- **'Hoạt động chi tiết để thực hiện gói công việc':** các bước nhỏ dùng để tạo đầu ra — Lấy một gói WBS rồi liệt kê việc thực hiện, người làm và thời lượng; đây là dữ liệu chuyển sang lịch Gantt.
 
-| Xác suất \ Tác động | Thấp (1) | Vừa (2) | Cao (3) |
+  ```text
+  Gói bàn giao liên quan:
+  1.2 — Chức năng ghi nhận đóng phí.
+
+  Các hoạt động chi tiết:
+  T03.01: Làm rõ xử lý chi tiết của chức năng — Huy — 1 ngày.
+  T03.02: Hoàn thiện giao diện nhập giao dịch — Huy — 1 ngày.
+  T03.03: Lập trình xử lý và lưu giao dịch — Huy — 3 ngày.
+  T03.04: Kiểm tra chức năng và xử lý lỗi — Huy — 1 ngày.
+
+  Tổng thời lượng tuần tự dự kiến: 6 ngày làm việc.
+
+  Trong kế hoạch tổng:
+  - Nhóm hoạt động này thuộc T03 — Phát triển module thu phí.
+  - T03 còn bao gồm chức năng khoản thu và báo cáo.
+  ```
+
+- **'Cách tổ chức nếu chọn Scrum':** cấu trúc công việc theo các đợt phát triển và kết quả tăng thêm — Nếu chọn Scrum, lấy danh sách yêu cầu ưu tiên làm đầu vào, xác định mục tiêu từng Sprint và điều kiện hoàn thành.
+
+  ```text
+  Ví dụ cùng dự án Blue Moon nếu tổ chức theo Scrum:
+
+  0. Dự án Blue Moon
+      1. Quản lý dự án và phối hợp khách hàng
+      2. Phát triển phần mềm qua các Sprint
+          2.1. Quản lý yêu cầu và ưu tiên Product Backlog
+          2.2. Sprint 1
+              Mục tiêu: có tài khoản và dữ liệu hộ gia đình cơ bản
+          2.3. Sprint 2
+              Mục tiêu: tạo khoản thu và ghi nhận đóng phí
+          2.4. Sprint 3
+              Mục tiêu: báo cáo, hoàn thiện và tích hợp
+      3. Hướng dẫn, triển khai và bàn giao
+
+  Mỗi Sprint bao gồm:
+  - Lập kế hoạch Sprint.
+  - Phân tích, thiết kế, lập trình, kiểm thử phần được chọn.
+  - Review kết quả và Retrospective.
+
+  Đây là phương án tổ chức thay thế.
+  Lịch minh họa ở sản phẩm tiếp theo sử dụng phương án Waterfall.
+  ```
+
+**Mối liên hệ giữa hai WBS:** WBS theo sản phẩm trả lời “cần tạo đầu ra nào”; WBS theo quy trình trả lời “tổ chức những công việc nào để tạo các đầu ra đó”. Một chức năng có thể được thực hiện qua nhiều pha, nên mã công việc và mã sản phẩm cần được phân biệt.
+
+</details>
+
+<details>
+<summary>-sản phẩm 'Danh sách công việc và lịch trình dự án — Gantt Chart'</summary>
+
+Lịch Gantt biểu diễn công việc theo thời gian, giúp theo dõi thời điểm bắt đầu, kết thúc, thời lượng và quan hệ phụ thuộc.
+
+WBS là đầu vào của lịch trình. **Vị trí trên cây WBS không tự quyết định thứ tự thực hiện**: hai công việc ở hai nhánh khác nhau vẫn có thể làm song song.
+
+**Đầu vào cần chuẩn bị:** các gói WBS, danh sách hoạt động, nguồn lực, ước tính thời lượng, quan hệ phụ thuộc và mốc cam kết.
+
+Các trường dưới đây là hướng dẫn triển khai thêm; PDF nêu nội dung WBS/Gantt nhưng không cung cấp đầy đủ mẫu trường chi tiết.
+
+- **'Mã công việc và liên kết WBS':** mã duy nhất của hoạt động và mã phạm vi mà hoạt động phục vụ — Tạo mã công việc riêng rồi liên kết đến WBS để truy ngược lý do phải thực hiện.
+
+  ```text
+  Mã công việc: T03.
+  Tên: Phát triển module quản lý thu phí.
+
+  WBS liên quan:
+  - 1.1. Chức năng tạo và cập nhật khoản thu.
+  - 1.2. Chức năng ghi nhận đóng phí.
+  - 1.3. Báo cáo đã thu và chưa thu.
+
+  T03 là dòng tổng hợp;
+  có thể mở rộng thành T03.01, T03.02... để theo dõi chi tiết.
+  ```
+
+- **'Tên công việc':** mô tả hành động cần thực hiện — Lấy từ hoạt động đã phân rã, dùng động từ và đối tượng rõ ràng để người được giao hiểu cần làm gì.
+
+  ```text
+  T01: Khảo sát và xác nhận yêu cầu.
+  T02: Phân tích và thiết kế.
+  T03: Phát triển module quản lý thu phí.
+
+  Tránh đặt tên quá chung:
+  - Làm phần mềm.
+  - Xử lý công việc.
+  ```
+
+- **'Người thực hiện và mức phân bổ':** nguồn lực được giao cho công việc và phần năng lực sử dụng — Chọn theo chuyên môn, lịch rảnh và khối lượng đang có; kiểm tra tổng phân bổ của một người trên các công việc song song.
+
+  ```text
+  Công việc: T03.
+  Người thực hiện chính: Huy.
+  Phân bổ trực tiếp: trung bình 80% thời gian làm việc.
+
+  Phần thời gian còn lại:
+  - Trao đổi nhóm.
+  - Đóng góp tài liệu.
+  - Hỗ trợ rà soát.
+
+  Khi nhiều công việc chạy đồng thời:
+  - Tổng phân bổ của Huy không được vượt khả năng đã cam kết.
+  ```
+
+- **'Lịch làm việc':** quy tắc xác định ngày nào được tính là ngày thực hiện — Điền ngày làm trong tuần, số giờ mỗi ngày và các ngày nghỉ trước khi tính lịch kết thúc.
+
+  ```text
+  Lịch thực hành:
+  - Thứ Hai đến thứ Sáu.
+  - 8 giờ/ngày.
+  - Thứ Bảy, Chủ nhật nghỉ.
+  - Chưa đưa ngày lễ, Tết vào phép tính.
+
+  Lịch dùng cho dự án thật:
+  - Cập nhật ngày nghỉ và lịch vắng của thành viên.
+  - Tính lại các ngày kết thúc bị ảnh hưởng.
+  ```
+
+- **'Thời lượng — Duration':** khoảng thời gian làm việc cần để hoàn thành hoạt động — Ước tính từ khối lượng, năng lực và mức phân bổ; ghi rõ đơn vị ngày làm việc.
+
+  ```text
+  Công việc: T03.
+  Thời lượng: 10 ngày làm việc.
+
+  Bắt đầu: 18/01/2027.
+  Kết thúc: 29/01/2027.
+
+  Khoảng này gồm hai tuần lịch,
+  tương ứng 10 ngày làm việc theo lịch thực hành.
+  ```
+
+- **'Khối lượng lao động — Effort':** tổng lượng lao động cần bỏ ra, thường đo bằng giờ công hoặc ngày công — Ước tính riêng với thời lượng; một công việc kéo dài 10 ngày không có nghĩa mọi người tham gia đều làm đủ 10 ngày công.
+
+  ```text
+  Công việc: T03.
+  Thời lượng: 10 ngày làm việc.
+  Khối lượng trực tiếp dự kiến của Huy: 8 ngày công.
+
+  Nếu phân bổ đều:
+  - 8 ngày công / 10 ngày = 80% thời gian của Huy.
+
+  Cần cộng riêng công sức của người khác nếu có.
+  ```
+
+- **'Công việc tiền nhiệm và loại phụ thuộc':** công việc hoặc điều kiện cần hoàn thành trước khi công việc khác được thực hiện — Chọn theo logic kỹ thuật và nghiệp vụ; quan hệ phổ biến là Finish-to-Start, tức việc trước xong thì việc sau mới bắt đầu.
+
+  ```text
+  T02:
+  - Tiền nhiệm: T01.
+  - Quan hệ: Finish-to-Start.
+
+  T06:
+  - Tiền nhiệm: T03, T04, T05.
+  - Quan hệ: Finish-to-Start.
+
+  Ý nghĩa:
+  - T06 chỉ bắt đầu khi các module cần tích hợp đã hoàn thành.
+  ```
+
+- **'Ngày bắt đầu và ngày kết thúc':** khoảng thời gian dự kiến thực hiện — Tính từ thời lượng, lịch làm việc, tiền nhiệm và khả năng nguồn lực; không chỉ nhập ngày theo mong muốn.
+
+  ```text
+  T04 — Phát triển module người dùng:
+  - Người thực hiện: Lan.
+  - Bắt đầu: 18/01/2027.
+  - Kết thúc: 22/01/2027.
+
+  T05 — Phát triển module hộ gia đình:
+  - Người thực hiện: Lan.
+  - Bắt đầu: 25/01/2027.
+  - Kết thúc: 05/02/2027.
+
+  Hai công việc được bố trí tuần tự để phù hợp nguồn lực của Lan.
+  ```
+
+- **'Mốc — Milestone':** sự kiện đánh dấu một kết quả quan trọng, thường có thời lượng bằng 0 — Chọn các điểm phê duyệt, hoàn thành pha hoặc bàn giao; phân biệt thời gian thực hiện hoạt động với thời điểm xác nhận kết quả.
+
+  ```text
+  Hoạt động:
+  T08 — Thực hiện nghiệm thu thử.
+  Thời gian: 01/03/2027 đến 05/03/2027.
+
+  Mốc:
+  M03 — Hoàn thành nghiệm thu thử.
+  Ngày: 05/03/2027.
+  Thời lượng: 0 ngày.
+  ```
+
+- **'Kết quả đầu ra và điều kiện hoàn thành':** bằng chứng để công nhận công việc đã xong — Lấy từ tiêu chí gói WBS và yêu cầu chất lượng; tránh cập nhật hoàn thành chỉ vì đã hết thời gian dự kiến.
+
+  ```text
+  T07 — Kiểm thử hệ thống.
+
+  Đầu ra:
+  - Kết quả chạy bộ kiểm thử.
+  - Danh sách lỗi.
+  - Báo cáo kiểm thử.
+
+  Điều kiện hoàn thành:
+  - Các tình huống trong phạm vi T07 đã được thực hiện.
+  - Lỗi được ghi nhận và phân loại.
+  - Không còn lỗi nghiêm trọng ngăn cản bắt đầu nghiệm thu thử.
+  ```
+
+- **'Tiến độ thực tế':** thông tin phản ánh công việc đã thực hiện đến thời điểm cập nhật — Ghi ngày thực tế, phần đã hoàn thành và phần còn lại; xác định cách tính phần trăm trước khi sử dụng.
+
+  ```text
+  Công việc: T03.
+  Ngày cập nhật: 22/01/2027.
+
+  Trạng thái: đang thực hiện.
+  Bắt đầu thực tế: 18/01/2027.
+
+  Ước tính theo khối lượng các phần việc:
+  - Đã hoàn thành: 40%.
+  - Còn lại: 60%.
+
+  Dự báo kết thúc: 29/01/2027.
+  Căn cứ: kết quả các hoạt động chi tiết và phần việc còn lại.
+  ```
+
+- **'Lịch trình tổng hợp':** tập hợp các công việc, nguồn lực và quan hệ phụ thuộc — Điền từ các trường trên; rà soát xem lịch có bao phủ toàn bộ phạm vi và đáp ứng các mốc trong tuyên ngôn.
+
+  ```text
+  Ngày bắt đầu dự án: 04/01/2027.
+  Ngày kết thúc dự kiến: 26/03/2027.
+
+  Các dòng dưới đây là kế hoạch tổng hợp.
+  Khi theo dõi chi tiết, mở rộng các dòng phát triển
+  thành hoạt động tương ứng với từng gói WBS.
+  ```
+
+| Mã | Công việc | Người phụ trách | Bắt đầu | Kết thúc | Ngày làm việc | Tiền nhiệm |
+|---|---|---|---|---|---:|---|
+| T01 | Khảo sát, xác nhận yêu cầu | Nam | 04/01 | 08/01 | 5 | — |
+| T02 | Phân tích, thiết kế | Nam | 11/01 | 15/01 | 5 | T01 |
+| T03 | Phát triển module thu phí | Huy | 18/01 | 29/01 | 10 | T02 |
+| T04 | Phát triển module người dùng | Lan | 18/01 | 22/01 | 5 | T02 |
+| T05 | Phát triển module hộ gia đình | Lan | 25/01 | 05/02 | 10 | T04 |
+| T06 | Tích hợp các module | Huy | 08/02 | 12/02 | 5 | T03, T05 |
+| T07 | Kiểm thử hệ thống | Mai | 15/02 | 26/02 | 10 | T06 |
+| T08 | Nghiệm thu thử với khách hàng | Mai | 01/03 | 05/03 | 5 | T07 |
+| T09 | Sửa lỗi, hoàn thiện phiên bản | Huy | 08/03 | 12/03 | 5 | T08 |
+| T10 | Nghiệm thu chính thức | Nam | 15/03 | 19/03 | 5 | T09 |
+| T11 | Triển khai, hướng dẫn, bàn giao | Nam | 22/03 | 26/03 | 5 | T10 |
+| T12 | Soạn và cập nhật tài liệu | Mai | 11/01 | 26/03 | 55 | T01 |
+| T13 | Quản lý và kiểm soát dự án | Nam | 04/01 | 26/03 | 60 | — |
+
+Tất cả ngày trong bảng thuộc năm **2027**. “Người phụ trách” có thể phối hợp với thành viên khác; ví dụ Huy và Lan cùng xử lý lỗi module mình phụ trách trong T09.
+
+T12 và T13 là hoạt động xuyên suốt, thực hiện theo từng phần thời gian. **55 và 60 ngày là khoảng thời gian hoạt động, không phải 55 và 60 ngày công toàn thời gian.** Tài liệu cần cho từng pha phải có hạn riêng; hồ sơ bàn giao cần hoàn tất trước mốc kết thúc T11.
+
+- **'Cách biểu diễn trên Gantt':** hình thức hiển thị khoảng thời gian và quan hệ công việc — Trong công cụ quản lý dự án, nhập công việc, thời lượng, nguồn lực và tiền nhiệm; mỗi hoạt động được thể hiện bằng thanh thời gian, mỗi mốc bằng ký hiệu mốc.
+
+  ```text
+  T03 và T04:
+  - Cùng bắt đầu ngày 18/01.
+  - Có thể làm song song vì Huy và Lan phụ trách khác nhau.
+
+  T04 và T05:
+  - Thực hiện tuần tự.
+  - Tránh bố trí Lan làm toàn thời gian cho hai việc cùng lúc.
+
+  T06:
+  - Nằm sau thời điểm hoàn thành các module cần tích hợp.
+
+  Mốc bàn giao:
+  - Đặt tại ngày 26/03/2027.
+  ```
+
+**Mối liên hệ với các sản phẩm trước:** WBS giúp tránh bỏ sót việc; lịch trình xác định khi nào làm và ai làm. Nếu lịch dự kiến vượt ngày 26/03 hoặc nguồn lực bị quá tải, cần điều chỉnh kế hoạch và xử lý các cam kết liên quan.
+
+</details>
+
+<details>
+<summary>-sản phẩm 'Kế hoạch quản lý rủi ro và bảng theo dõi rủi ro'</summary>
+
+Kế hoạch quản lý rủi ro xác định các sự kiện có thể ảnh hưởng dự án, cách đánh giá mức độ và cách chuẩn bị ứng phó.
+
+**Đầu vào cần chuẩn bị:** mục tiêu, giả định, ràng buộc, WBS, lịch trình, ngân sách và thông tin từ các bên liên quan.
+
+**Lưu ý khi sử dụng tài liệu:** bảng trang 7 dùng các điểm như 2 và 4 theo cách phù hợp với phép nhân xác suất × tác động; ma trận trang 9 lại quy định **năm mức**, trong đó xác suất 2 và tác động 2 cho **mức 3**. Trang 8 còn lặp nhãn mức 4 và mức 5 ở hai dòng cuối. Ví dụ dưới đây **thống nhất dùng ma trận trang 9**, với mức 1 thấp nhất và mức 5 cao nhất.
+
+- **'Mã hoặc STT rủi ro':** định danh dùng để theo dõi một rủi ro xuyên suốt dự án — Đặt mã duy nhất và giữ nguyên khi cập nhật thông tin.
+
+  ```text
+  Mã: R01.
+  STT: 1.
+  Tên ngắn: Thay đổi yêu cầu thu phí.
+  ```
+
+- **'Mô tả rủi ro':** diễn đạt sự kiện chưa chắc xảy ra và hậu quả nếu xảy ra — Lấy từ giả định chưa được kiểm chứng, điểm yếu của kế hoạch hoặc phụ thuộc bên ngoài; viết rõ nguyên nhân, sự kiện và ảnh hưởng.
+
+  ```text
+  Do các quy tắc thu phí chưa được rà soát đầy đủ,
+  khách hàng có thể bổ sung cách tính mới sau khi lập trình bắt đầu,
+  khiến nhóm phải sửa dữ liệu và xử lý thu phí,
+  làm tăng chi phí và chậm kiểm thử.
+  ```
+
+- **'Phạm vi hoặc công việc bị ảnh hưởng':** mục tiêu, sản phẩm hoặc hoạt động chịu tác động — Đối chiếu rủi ro với mã WBS và mã công việc trong lịch trình.
+
+  ```text
+  Rủi ro: R01.
+
+  WBS bị ảnh hưởng:
+  - 1.1. Chức năng tạo và cập nhật khoản thu.
+  - 1.2. Chức năng ghi nhận đóng phí.
+  - 1.3. Báo cáo đã thu và chưa thu.
+
+  Công việc bị ảnh hưởng:
+  - T03. Phát triển module thu phí.
+  - T07. Kiểm thử hệ thống.
+  ```
+
+- **'Xác suất':** đánh giá khả năng xảy ra của rủi ro — Chọn theo dữ liệu quá khứ, tình hình hiện tại và dấu hiệu cụ thể; tài liệu sử dụng ba mức định tính, không quy định tỷ lệ phần trăm.
+
+  ```text
+  Thấp (1):
+  - Rất hiếm xảy ra hoặc ít có cơ sở cho rằng sẽ xảy ra.
+
+  Vừa (2):
+  - Có khả năng xảy ra và có căn cứ hợp lý.
+
+  Cao (3):
+  - Có dấu hiệu rõ hoặc từng xảy ra thường xuyên.
+
+  R01:
+  - Xác suất: Vừa (2).
+  - Căn cứ: khách hàng còn một số quy tắc thu phí chưa thống nhất.
+  ```
+
+- **'Tác động':** mức ảnh hưởng đến mục tiêu nếu rủi ro xảy ra — Ước lượng ảnh hưởng đến phạm vi, chất lượng và chi phí; ghi căn cứ thay vì chỉ chọn nhãn.
+
+  ```text
+  Thang tham khảo từ tài liệu:
+
+  Thấp (1):
+  - Dưới 5% phạm vi hoặc chi phí bị ảnh hưởng.
+
+  Vừa (2):
+  - Khoảng 5% đến 10% phạm vi hoặc chi phí bị ảnh hưởng.
+
+  Cao (3):
+  - Trên 10% phạm vi hoặc chi phí bị ảnh hưởng.
+  - Hoặc chất lượng giảm đến mức không thể chấp nhận.
+
+  R01:
+  - Chi phí phát sinh ước tính: 8.000.000 đồng.
+  - So với ngân sách 100.000.000 đồng: 8%.
+  - Tác động theo chi phí: Vừa (2).
+  ```
+
+  Nếu các khía cạnh có mức khác nhau, cần thống nhất quy tắc tổng hợp. Trong ví dụ này, nhóm chọn mức cao nhất trong các khía cạnh đã đánh giá để ưu tiên xử lý.
+
+- **'Mức độ rủi ro':** kết quả kết hợp xác suất và tác động — Tra đúng ma trận đã chọn; không thay bằng phép nhân khi đang dùng hệ năm mức của trang 9.
+
+  ```text
+  R01:
+  - Xác suất P = 2.
+  - Tác động I = 2.
+  - Tra ma trận: mức 3.
+
+  Công thức tương đương riêng với ma trận này:
+  Mức = P + I - 1
+       = 2 + 2 - 1
+       = 3.
+  ```
+
+| Xác suất \ Tác động | Thấp — 1 | Vừa — 2 | Cao — 3 |
 |---|---:|---:|---:|
-| Thấp (1) | Mức 1 | Mức 2 | Mức 3 |
-| Vừa (2) | Mức 2 | Mức 3 | Mức 4 |
-| Cao (3) | Mức 3 | Mức 4 | Mức 5 |
+| Thấp — 1 | Mức 1 | Mức 2 | Mức 3 |
+| Vừa — 2 | Mức 2 | Mức 3 | Mức 4 |
+| Cao — 3 | Mức 3 | Mức 4 | Mức 5 |
 
-Khi dùng ma trận này, **mức 1 thấp nhất, mức 5 nghiêm trọng nhất**. Có thể viết lại nhãn theo thứ tự nhất quán: **1 — hầu như không ảnh hưởng; 2 — ảnh hưởng không đáng kể; 3 — ảnh hưởng nhưng dự án vẫn thực hiện được; 4 — ảnh hưởng đáng kể; 5 — có thể khiến dự án không thể tiếp tục**.
+- **'Hành động ngăn ngừa':** việc làm trước nhằm giảm khả năng xảy ra hoặc giảm hậu quả — Chọn hành động xử lý đúng nguyên nhân; chuyển thành công việc có người phụ trách và thời hạn.
 
-**Ví dụ bảng rủi ro đã điền**
+  ```text
+  R01 — Thay đổi yêu cầu thu phí.
 
-Các điểm dưới đây là đánh giá minh họa cho bài toán mẫu.
+  Ngăn ngừa:
+  - Thu đủ biểu mẫu và quy tắc thu phí.
+  - Dùng ví dụ cụ thể để khách hàng kiểm tra cách tính.
+  - Xác nhận danh mục yêu cầu trước khi lập trình.
+  - Thống nhất quy trình đề nghị và phê duyệt thay đổi.
 
-| Mã | Mô tả | Xác suất | Tác động | Mức theo ma trận | Hành động ngăn ngừa | Phụ trách |
+  Người thực hiện: Nam.
+  Hạn hoàn thành chính: trước khi T03 bắt đầu.
+  ```
+
+- **'Phương án ứng phó khi xảy ra':** việc thực hiện khi sự kiện rủi ro đã trở thành thực tế — Chọn phương án phù hợp giới hạn ngân sách, thời hạn và quyền quyết định.
+
+  ```text
+  Nếu khách hàng đề nghị thêm cách tính phí:
+
+  1. Ghi nhận yêu cầu thay đổi.
+  2. Xác định chức năng và tài liệu bị ảnh hưởng.
+  3. Ước tính lại công việc, chi phí và thời gian.
+  4. Trình người có thẩm quyền quyết định.
+  5. Nếu được duyệt, cập nhật phạm vi, WBS và lịch trình.
+
+  Không tự đưa yêu cầu mới vào kế hoạch đã cam kết.
+  ```
+
+- **'Người phụ trách rủi ro':** người theo dõi diễn biến và bảo đảm biện pháp ứng phó được thực hiện — Chọn người có khả năng quan sát và điều phối; có thể phân công người thực hiện hành động khác.
+
+  ```text
+  R01:
+  - Người phụ trách rủi ro: Nam.
+  - Người đánh giá tác động kỹ thuật: Huy.
+  - Người xác nhận nghiệp vụ: đại diện kế toán khách hàng.
+  - Người phê duyệt thay đổi vượt thẩm quyền: nhà tài trợ.
+  ```
+
+- **'Dấu hiệu kích hoạt':** thông tin cho thấy rủi ro đang đến gần hoặc cần bắt đầu ứng phó — Chọn dấu hiệu quan sát được, gắn với mốc trong lịch trình.
+
+  ```text
+  R01:
+  - Sau ngày 08/01/2027 vẫn còn quy tắc thu phí chưa xác nhận.
+  - Khách hàng gửi thêm công thức tính phí ngoài danh mục đã duyệt.
+
+  Khi xuất hiện:
+  - Nam tổ chức đánh giá ảnh hưởng.
+  - Cập nhật bảng rủi ro và hồ sơ thay đổi.
+  ```
+
+- **'Trạng thái và thời điểm rà soát':** tình hình hiện tại của rủi ro cùng lịch cập nhật — Ghi rõ rủi ro đang theo dõi, đã xảy ra hay đã đóng; đánh giá lại sau khi thực hiện biện pháp.
+
+  ```text
+  R01:
+  - Trạng thái: đang theo dõi.
+  - Rà soát: mỗi thứ Sáu và khi có yêu cầu mới.
+  - Ngày cập nhật minh họa: 08/01/2027.
+
+  Sau khi xác nhận yêu cầu:
+  - Xác suất được đánh giá lại từ 2 xuống 1.
+  - Tác động giữ ở mức 2.
+  - Mức rủi ro còn lại: 1 + 2 - 1 = 2.
+
+  Việc giảm điểm cần có căn cứ, không thực hiện tự động.
+  ```
+
+- **'Dự phòng liên quan':** phần tiền, thời gian hoặc nguồn lực được chuẩn bị để xử lý bất định — Lấy từ ngân sách và kế hoạch đã duyệt; kiểm tra dự phòng có đủ so với phương án ứng phó hay không.
+
+  ```text
+  Dự phòng tiền toàn dự án: 5.000.000 đồng.
+
+  R01 có thể làm phát sinh: 8.000.000 đồng.
+
+  Đánh giá:
+  - Dự phòng hiện tại không đủ cho toàn bộ tác động ước tính.
+  - Cần giảm ảnh hưởng, điều chỉnh phạm vi hoặc trình phương án khác.
+  - Không mặc định được vượt ngân sách 100.000.000 đồng.
+  ```
+
+- **'Bảng rủi ro tổng hợp':** danh sách giúp nhóm so sánh và ưu tiên xử lý — Mỗi dòng là một rủi ro; dùng chung thang đo và ghi rõ hành động cụ thể.
+
+  ```text
+  Quy tắc sử dụng:
+  - Chấm P và I theo thang 1–3.
+  - Tra mức rủi ro theo ma trận năm mức.
+  - Ưu tiên xem xét rủi ro có mức cao.
+  - Với các rủi ro cùng mức, xét thêm thời điểm có thể xảy ra
+    và mức độ cấp bách của hành động.
+  ```
+
+| Mã | Rủi ro trong dự án Blue Moon | P | I | Mức | Hành động chính | Phụ trách |
 |---|---|---:|---:|---:|---|---|
-| R01 | Thay đổi quy tắc tính phí sau thiết kế, gây sửa lại chức năng | 2 | 3 | 4 | Xác nhận quy tắc và ví dụ tính phí trước lập trình | An |
-| R02 | Lập trình viên nghỉ hoặc bị điều sang dự án khác | 1 | 2 | 2 | Chia sẻ kiến thức, cập nhật mã nguồn và chuẩn bị bàn giao | An |
-| R03 | Tài liệu kỹ thuật chưa hoàn thiện khi bàn giao | 1 | 3 | 3 | Giao người viết, rà soát tài liệu tại từng mốc | Bình |
-| R04 | Khách hàng không bố trí người dùng thử đúng lịch | 2 | 2 | 3 | Chốt lịch và người thay thế trước mốc 30/11 | An |
-| R05 | Ước lượng công sức quá thấp, làm thiếu thời gian hoàn thiện | 2 | 2 | 3 | Rà soát ước lượng theo WBS và khả năng nhân lực | An, Chi |
+| R01 | Bổ sung quy tắc thu phí sau khi chốt yêu cầu | 2 | 2 | 3 | Xác nhận quy tắc, kiểm soát thay đổi | Nam |
+| R02 | Một lập trình viên không thể tiếp tục tham gia | 2 | 3 | 4 | Chia sẻ mã nguồn, rà soát chéo, chuẩn bị phân công lại | Nam |
+| R03 | Khách hàng chậm tham gia nghiệm thu | 2 | 2 | 3 | Xác nhận lịch và người đại diện trước T08 | Nam |
+| R04 | Bộ cài không hoạt động trên máy đích | 2 | 3 | 4 | Xác nhận cấu hình, kiểm tra cài đặt sớm | Huy |
+| R05 | Tài liệu không theo kịp thay đổi mã nguồn | 2 | 2 | 3 | Cập nhật tài liệu cùng từng phần bàn giao | Mai |
+| R06 | Ước tính thời gian hoặc chi phí quá lạc quan | 2 | 3 | 4 | Chia nhỏ việc, rà soát ước tính, cập nhật phần còn lại | Nam |
+| R07 | Các thành viên hiểu khác nhau về yêu cầu | 2 | 2 | 3 | Dùng tình huống mẫu, ghi quyết định và rà soát chung | Nam |
+| R08 | Một công việc tiền nhiệm bị chậm | 2 | 2 | 3 | Theo dõi phụ thuộc, điều chỉnh nguồn lực và lịch | Nam |
+| R09 | Khách hàng từ chối nghiệm thu | 1 | 3 | 3 | Thống nhất tiêu chí, cho dùng thử, lưu kết quả đối chiếu | Nam |
 
-**Ví dụ liên kết đầy đủ giữa các thuộc tính**
+Các điểm trong bảng là **ước lượng minh họa cho dự án mẫu**, cần đánh giá lại khi có dữ liệu thực tế.
 
-R01 xuất phát từ giả định trong tuyên ngôn rằng yêu cầu đã thống nhất sẽ ổn định. Rủi ro ảnh hưởng đến gói WBS **Tạo khoản thu**, vì quy tắc tính phí quyết định dữ liệu cần lưu và cách xử lý.
+**Mối liên hệ xuyên suốt qua một tình huống**
 
-Nhóm đánh giá xác suất **2**, tác động **3**, rồi tra ma trận được **mức 4**. Vì vậy, An bố trí hành động ngăn ngừa: cùng khách hàng rà soát các tình huống tính phí trước khi thiết kế được xác nhận.
+```text
+Tình huống:
+Khách hàng đề nghị thêm thanh toán ngân hàng trực tuyến
+sau khi nhóm bắt đầu lập trình.
 
-Nếu khách hàng gửi quy tắc mới sau thời điểm đó, dấu hiệu kích hoạt xuất hiện. Nhóm đánh giá phần thiết kế, lập trình và kiểm thử phải làm lại; sau đó xác định ảnh hưởng đến lịch Gantt, mốc 30/11 và ngân sách. Kết quả xử lý được ghi vào trạng thái rủi ro và báo cáo tiến độ.
+Tuyên ngôn:
+- Chức năng này đang nằm ngoài phạm vi.
 
-**Cách kiểm tra sản phẩm:** Mỗi rủi ro phải có sự kiện và hậu quả rõ; điểm đánh giá phải theo cùng một thang; hành động phải giải quyết đúng nguyên nhân; người phụ trách phải biết khi nào cần hành động.
+WBS:
+- Chưa có gói công việc tạo và kiểm tra tích hợp ngân hàng.
+
+Lịch Gantt:
+- Chưa bố trí thời gian và nguồn lực cho chức năng mới.
+
+Bảng rủi ro:
+- R01 có dấu hiệu xảy ra.
+- Nam khởi động quy trình đánh giá thay đổi.
+
+Nếu yêu cầu được phê duyệt:
+- Cập nhật phạm vi và danh sách bàn giao.
+- Thêm các gói WBS cần thiết.
+- Ước tính nguồn lực, chi phí và thời gian.
+- Cập nhật lịch, ngân sách và tiêu chí nghiệm thu.
+- Đánh giá thêm các rủi ro mới của việc tích hợp.
+```
 
 </details>
