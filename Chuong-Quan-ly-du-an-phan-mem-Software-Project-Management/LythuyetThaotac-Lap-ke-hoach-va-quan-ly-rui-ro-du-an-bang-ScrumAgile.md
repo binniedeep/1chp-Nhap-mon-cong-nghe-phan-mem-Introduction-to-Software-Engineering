@@ -1,4 +1,5 @@
-### 🔍LythuyetThaotac: Khởi tạo, lập kế hoạch và quản lý rủi ro dự án phần mềm — Huong dan xay dung Ke hoach du an(8).pdf
+### 🔍LythuyetThaotac: Khởi tạo, lập kế hoạch và quản lý rủi ro dự án phần mềm — Huong dan xay dung Ke hoach du an(8).pdf - https://lms.hust.edu.vn/mod/page/view.php?id=63968
+https://husteduvn.sharepoint.com/sites/Elearning2/Shared%20Documents/Elearning/2023/02.%20Tr%C6%B0%E1%BB%9Dng%20CNTT%26TT/02_IT3180_Nh%E1%BA%ADp%20m%C3%B4n%20C%C3%B4ng%20ngh%E1%BB%87%20ph%E1%BA%A7n%20m%E1%BB%81m/PDF/IT3180_Pr03_Prj-C4_intro_final.pdf
 
 Tài liệu hướng dẫn gốc: Huong dan xay dung Ke hoach du an(8).pdf
 
